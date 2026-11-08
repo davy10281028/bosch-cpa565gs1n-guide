@@ -99,6 +99,31 @@
   .panel .keys .start { background: #c4161c; color: #fff; font-weight: 700; }
   .panel .lbl { display: block; color: #aaa; font-size: .64rem; line-height: 1.3; }
   .panel .cap { text-align: center; color: #aaa; font-size: .7rem; margin-top: 4px; }
+  .ico { width: 34px; height: 34px; color: var(--ink); flex: none; vertical-align: middle; }
+  .dial {
+    display: grid; grid-template-columns: 1fr 120px 1fr; grid-template-rows: auto repeat(4, 46px);
+    gap: 6px 10px; align-items: center; max-width: 460px; margin: 10px auto 4px;
+    background: linear-gradient(135deg, #e9ecef, #cfd4da); color: #1f2328; border-radius: 14px; padding: 14px 10px;
+  }
+  .dial .ico { color: #1f2328; }
+  .dial .pos { display: flex; align-items: center; gap: 6px; font-size: .85rem; }
+  .dial .pos b { color: #c4161c; }
+  .dial .top { grid-column: 2; grid-row: 1; flex-direction: column; justify-content: center; gap: 2px; }
+  .dial .l1, .dial .l2, .dial .l3, .dial .l4 { grid-column: 1; justify-content: flex-end; text-align: right; }
+  .dial .r1, .dial .r2, .dial .r3, .dial .r4 { grid-column: 3; }
+  .dial .l1, .dial .r1 { grid-row: 2; } .dial .l2, .dial .r2 { grid-row: 3; }
+  .dial .l3, .dial .r3 { grid-row: 4; } .dial .l4, .dial .r4 { grid-row: 5; }
+  .dial .dialknob {
+    grid-column: 2; grid-row: 2 / 6; width: 110px; height: 110px; border-radius: 50%; margin: 0 auto;
+    background: radial-gradient(circle at 35% 35%, #fafbfc, #8a9099); border: 4px solid #b9bfc6;
+    display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .8rem; color: #333;
+  }
+  .knobtable td:nth-child(2) { text-align: center; }
+  @media (max-width: 560px) {
+    .dial { grid-template-columns: 1fr 84px 1fr; }
+    .dial .dialknob { width: 80px; height: 80px; }
+    .dial .pos { font-size: .75rem; }
+  }
   @media (max-width: 560px) {
     .panel { grid-template-columns: 1fr 1fr; }
     .panel .screen { grid-column: 1 / -1; order: 3; }
@@ -118,6 +143,7 @@
   <a href="#quick">⚡ 30 秒速查</a>
   <a href="#first">首次使用</a>
   <a href="#parts">面板與配件</a>
+  <a href="#knob">旋鈕圖示</a>
   <a href="#modes">功能總覽</a>
   <a href="#mw">微波</a>
   <a href="#steam">蒸氣</a>
@@ -137,21 +163,21 @@
 <!-- 速查 -->
 <section id="quick" class="quick">
   <h2><span class="num">⚡</span>30 秒速查：最常用的操作</h2>
-  <p class="muted">本機操作邏輯：<b>左旋鈕選功能</b> → <b>右旋鈕調數值</b>（溫度／時間／重量）→ 按 <kbd class="go">start / stop</kbd>。左旋鈕轉回最上面「0」＝關機。</p>
+  <p class="muted">本機操作邏輯：<b>左旋鈕選功能</b> → <b>右旋鈕調數值</b>（溫度／時間／重量）→ 按 <kbd class="go">start / stop</kbd>。左旋鈕轉回最上面「0」＝關機。<a href="#knob">→ 左旋鈕 9 個圖示對照</a></p>
   <div class="table-wrap">
   <table>
     <tr><th>我要…</th><th>怎麼做</th></tr>
-    <tr><td>微波加熱剩菜</td><td>左旋鈕轉到 <kbd class="knob">〰 微波</kbd> → 一直按 <kbd>〰</kbd> 鍵選瓦數（建議 <b>600W</b>）→ 右旋鈕調時間 → <kbd class="go">start</kbd></td></tr>
+    <tr><td>微波加熱剩菜</td><td>左旋鈕轉到 <kbd class="knob">右1 〰 微波</kbd> → 一直按 <kbd>〰</kbd> 鍵選瓦數（建議 <b>600W</b>）→ 右旋鈕調時間 → <kbd class="go">start</kbd></td></tr>
     <tr><td>熱一杯牛奶/飲料</td><td>微波 <b>1000W</b>、200 ml 約 <b>1～2 分</b>；杯裡放一支湯匙防突沸</td></tr>
-    <tr><td>蒸魚、蒸菜、蒸包子</td><td>水箱加水到 MAX → 左旋鈕轉到 <kbd class="knob">♨ 蒸氣</kbd> → 按 <kbd>♨</kbd> 鍵選蒸氣強度（1～3）→ 右旋鈕調時間 → <kbd class="go">start</kbd>。<br>玻璃烤盤放<b>第 3 層</b>，上面放蒸盤</td></tr>
-    <tr><td>烤箱烤東西</td><td>左旋鈕轉到 <kbd class="knob">熱風</kbd> → 右旋鈕調溫度（100～230°C）→ <kbd class="go">start</kbd>；要快速預熱，先短按 <kbd>快速預熱</kbd> 再 start</td></tr>
-    <tr><td>烤吐司、烤肉片</td><td>左旋鈕轉到 <kbd class="knob">上火燒烤</kbd> → 右旋鈕選段數 1～3 → 設時間 → <kbd class="go">start</kbd>；食物放烤架第 3 層</td></tr>
-    <tr><td>用自動程式（不想自己設）</td><td>左旋鈕轉到 <kbd class="knob">🍴 程式</kbd> → 右旋鈕選菜色編號 → 按 <kbd>🍴</kbd> 切到重量 → 右旋鈕設重量 → <kbd class="go">start</kbd>（<a href="#auto">程式列表</a>）</td></tr>
+    <tr><td>蒸魚、蒸菜、蒸包子</td><td>水箱加水到 MAX → 左旋鈕轉到 <kbd class="knob">右2 ♨ 蒸氣</kbd> → 按 <kbd>♨</kbd> 鍵選蒸氣強度（1～3）→ 右旋鈕調時間 → <kbd class="go">start</kbd>。<br>玻璃烤盤放<b>第 3 層</b>，上面放蒸盤</td></tr>
+    <tr><td>烤箱烤東西</td><td>左旋鈕轉到 <kbd class="knob">右3 熱風</kbd> → 右旋鈕調溫度（100～230°C）→ <kbd class="go">start</kbd>；要快速預熱，先短按 <kbd>快速預熱</kbd> 再 start</td></tr>
+    <tr><td>烤吐司、烤肉片</td><td>左旋鈕轉到 <kbd class="knob">右4 全面燒烤</kbd> → 右旋鈕選段數 1～3 → 設時間 → <kbd class="go">start</kbd>；食物放烤架第 3 層</td></tr>
+    <tr><td>用自動程式（不想自己設）</td><td>左旋鈕轉到 <kbd class="knob">左1 🍴 自動程式</kbd> → 右旋鈕選菜色編號 → 按 <kbd>🍴</kbd> 切到重量 → 右旋鈕設重量 → <kbd class="go">start</kbd>（<a href="#auto">程式列表</a>）</td></tr>
     <tr><td>設定烹調時間（自動關火）</td><td>選好功能後，按 <kbd>⏱</kbd> 直到「烹調時間」亮 → 右旋鈕調時間 → <kbd class="go">start</kbd></td></tr>
     <tr><td>廚房計時器（不影響爐子）</td><td>按一下 <kbd>⏱</kbd> → 右旋鈕設時間，幾秒後自動開始</td></tr>
     <tr><td>中途暫停 / 翻面</td><td>按 <kbd class="go">stop</kbd> 或直接開門；關門後再按 <kbd class="go">start</kbd> 繼續</td></tr>
     <tr><td>結束 / 關機</td><td>左旋鈕轉回最上面 <b>0</b></td></tr>
-    <tr><td>蒸完後清洗管路（建議每次）</td><td>左旋鈕轉到 <kbd class="knob">沖洗</kbd> → 清空集水盒、水箱換新水 → <kbd class="go">start</kbd></td></tr>
+    <tr><td>蒸完後清洗管路（建議每次）</td><td>左旋鈕轉到 <kbd class="knob">左3 沖洗（點點方格）</kbd> → 清空集水盒、水箱換新水 → <kbd class="go">start</kbd></td></tr>
     <tr><td>童鎖</td><td>關機狀態下<b>長按約 4 秒</b> <kbd>快速預熱</kbd> 鍵（顯示鎖頭）；再長按 4 秒解除</td></tr>
   </table>
   </div>
@@ -171,7 +197,7 @@
     <li><b>撕掉保護膜、清空爐內</b>：取出所有包材與配件，爐內不要留任何東西。</li>
     <li><b>設定時鐘</b>：第一次通電時時間會閃爍 → 右旋鈕調時間 → 按 <kbd>⏱</kbd> 確認。</li>
     <li><b>設定水質硬度</b>（影響除鈣提醒頻率）：關機狀態下<b>長按 <kbd>⏱</kbd> 數秒</b>進入基本設定 → 重複按 <kbd>⏱</kbd> 切到「水質硬度」→ 右旋鈕選 0～4 → 再長按數秒儲存（<a href="#settings">見設定表</a>）。</li>
-    <li><b>空燒去味</b>：用濕軟布擦拭爐腔 → 關門、廚房開窗通風 → 左旋鈕轉到 <kbd class="knob">熱風</kbd> → 右旋鈕調 <b>180°C</b> → <kbd class="go">start</kbd> → <b>1 小時</b>後轉回 0，等冷卻。</li>
+    <li><b>空燒去味</b>：用濕軟布擦拭爐腔 → 關門、廚房開窗通風 → 左旋鈕轉到 <kbd class="knob">右3 熱風</kbd> → 右旋鈕調 <b>180°C</b> → <kbd class="go">start</kbd> → <b>1 小時</b>後轉回 0，等冷卻。</li>
     <li><b>清洗配件</b>：烤架、玻璃烤盤、蒸盤用中性洗碗精＋軟布洗淨。</li>
     <li><b>第一次用蒸氣前</b>：建議先跑一次 <a href="#rinse">沖洗程序</a>，把管路沖乾淨。</li>
   </ol>
@@ -204,22 +230,51 @@
     <div><div class="knob">− ＋</div><div class="cap">右：調數值</div></div>
   </div>
 
-  <h3>左旋鈕（功能選擇）的位置</h3>
+  <h3 id="knob">左旋鈕（功能選擇）圖示對照</h3>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-off" viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="28" r="1.7" fill="currentColor"/><circle cx="20" cy="28" r="1.7" fill="currentColor"/><circle cx="25" cy="28" r="1.7" fill="currentColor"/></symbol>
+      <symbol id="i-prog" viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 11v6M15 11v6M18 11v6M12 17q3 4 6 0M15 19v10"/><path d="M25 29V11q4 3 3 10h-3"/></g></symbol>
+      <symbol id="i-descale" viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 10v8q0 6 6 6q5 0 5 5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="28" cy="12" r="1.5" fill="currentColor"/><circle cx="30" cy="17" r="1.5" fill="currentColor"/><circle cx="27" cy="21" r="1.5" fill="currentColor"/></symbol>
+      <symbol id="i-rinse" viewBox="0 0 40 40"><path d="M7 7v26h26V7" fill="none" stroke="currentColor" stroke-width="2"/><g fill="currentColor"><circle cx="14" cy="17" r="1.5"/><circle cx="26" cy="17" r="1.5"/><circle cx="20" cy="22" r="1.5"/><circle cx="14" cy="27" r="1.5"/><circle cx="20" cy="28" r="1.5"/><circle cx="26" cy="27" r="1.5"/></g></symbol>
+      <symbol id="i-hagrill" viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 12l2.5 3 2.5-3 2.5 3 2.5-3 2.5 3 2.5-3 2.5 3 2.5-3" fill="none" stroke="currentColor" stroke-width="1.8"/><g fill="currentColor"><ellipse cx="20" cy="21" rx="1.8" ry="3"/><ellipse cx="15.5" cy="27.5" rx="3" ry="1.8"/><ellipse cx="24.5" cy="27.5" rx="3" ry="1.8"/></g></symbol>
+      <symbol id="i-mw" viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><g fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14q2.5-3 5 0t5 0 5 0 5 0"/><path d="M10 20q2.5-3 5 0t5 0 5 0 5 0"/><path d="M10 26q2.5-3 5 0t5 0 5 0 5 0"/></g></symbol>
+      <symbol id="i-steam" viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 10q0 7-5 11t-4 8h18q1-4-4-8t-5-11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M17 29q3-4 6 0" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+      <symbol id="i-hotair" viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="20" r="10" fill="none" stroke="currentColor" stroke-width="2"/><g fill="currentColor"><ellipse cx="20" cy="15.5" rx="2" ry="3"/><ellipse cx="16" cy="23" rx="3" ry="2" transform="rotate(-30 16 23)"/><ellipse cx="24" cy="23" rx="3" ry="2" transform="rotate(30 24 23)"/></g></symbol>
+      <symbol id="i-grill" viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 12l2.5 3 2.5-3 2.5 3 2.5-3 2.5 3 2.5-3 2.5 3 2.5-3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="dial">
+    <div class="pos top"><svg class="ico"><use href="#i-off"/></svg><span><b>0</b> 關機</span></div>
+    <div class="pos l1"><span><b>左1</b> 自動程式</span><svg class="ico"><use href="#i-prog"/></svg></div>
+    <div class="pos l2"><span><b>左2</b> 除鈣</span><svg class="ico"><use href="#i-descale"/></svg></div>
+    <div class="pos l3"><span><b>左3</b> 沖洗</span><svg class="ico"><use href="#i-rinse"/></svg></div>
+    <div class="pos l4"><span><b>左4</b> 熱風燒烤</span><svg class="ico"><use href="#i-hagrill"/></svg></div>
+    <div class="dialknob">左旋鈕</div>
+    <div class="pos r1"><svg class="ico"><use href="#i-mw"/></svg><span><b>右1</b> 微波</span></div>
+    <div class="pos r2"><svg class="ico"><use href="#i-steam"/></svg><span><b>右2</b> 蒸氣</span></div>
+    <div class="pos r3"><svg class="ico"><use href="#i-hotair"/></svg><span><b>右3</b> 熱風</span></div>
+    <div class="pos r4"><svg class="ico"><use href="#i-grill"/></svg><span><b>右4</b> 全面燒烤</span></div>
+  </div>
+  <p class="muted" style="text-align:center">↑ 依實機面板排列繪製（圖示為示意，以機身印刷為準）</p>
+
   <div class="table-wrap">
-  <table>
-    <tr><th>圖示</th><th>功能</th><th>用途</th></tr>
-    <tr><td><b>0</b>（最上方）</td><td>關機</td><td>關機／省電待機，螢幕顯示時鐘</td></tr>
-    <tr><td>〰〰</td><td><b>微波</b></td><td>加熱、解凍、快速烹調</td></tr>
-    <tr><td>♨</td><td><b>蒸氣</b></td><td>熱蒸氣送入爐內，蒸魚、蒸菜、蒸點心</td></tr>
-    <tr><td>風扇</td><td><b>熱風</b>（3D 熱風）</td><td>後方環形加熱管＋風扇，烘焙、烤肉；另有 40°C 發酵</td></tr>
-    <tr><td>上方鋸齒</td><td><b>全面燒烤</b>（上火）</td><td>上方整面加熱，烤吐司、焗烤、香腸</td></tr>
-    <tr><td>鋸齒＋風扇</td><td><b>熱風燒烤</b></td><td>上火＋風扇，烤全雞、整條魚、大塊肉</td></tr>
-    <tr><td>🍴</td><td><b>自動程式</b></td><td>30 種內建菜單，輸入重量自動設定</td></tr>
-    <tr><td>水滴/鈣</td><td><b>除鈣</b></td><td>清除蒸氣產生器水垢（約 32 分）</td></tr>
-    <tr><td>水流</td><td><b>沖洗</b></td><td>用清水沖洗蒸氣管路，建議每次蒸完都做</td></tr>
+  <table class="knobtable">
+    <tr><th>位置</th><th>圖示</th><th>功能</th><th>用途／重點</th></tr>
+    <tr><td>正上方</td><td><svg class="ico"><use href="#i-off"/></svg></td><td><b>0 關機</b></td><td>關機／省電待機，螢幕顯示時鐘。任何功能要結束都轉回這裡</td></tr>
+    <tr><td>右 1</td><td><svg class="ico"><use href="#i-mw"/></svg></td><td><b>微波</b></td><td>加熱、解凍、快速烹調；按 〰 鍵選 90～1000 W（<a href="#mw">說明</a>）</td></tr>
+    <tr><td>右 2</td><td><svg class="ico"><use href="#i-steam"/></svg></td><td><b>蒸氣</b></td><td>熱蒸氣送入爐內，蒸魚、蒸蛋、包子；按 ♨ 鍵選強度 1～3，水箱要加水（<a href="#steam">說明</a>）</td></tr>
+    <tr><td>右 3</td><td><svg class="ico"><use href="#i-hotair"/></svg></td><td><b>熱風</b>（3D 熱風）</td><td>後方環形加熱管＋風扇，烘焙、烤肉、薯條；40°C 可發酵麵團（<a href="#oven">說明</a>）</td></tr>
+    <tr><td>右 4</td><td><svg class="ico"><use href="#i-grill"/></svg></td><td><b>全面燒烤</b>（上火）</td><td>上方整面加熱，段數 1～3；烤吐司、香腸、牛排、焗烤</td></tr>
+    <tr><td>左 4</td><td><svg class="ico"><use href="#i-hagrill"/></svg></td><td><b>熱風燒烤</b></td><td>上火＋風扇，100～190°C；烤全雞、雞腿、整條魚、大塊肉</td></tr>
+    <tr><td>左 3</td><td><svg class="ico"><use href="#i-rinse"/></svg></td><td><b>沖洗</b></td><td>用清水沖洗蒸氣管路，時間固定、很短；<b>第一次使用、每次蒸完、很久沒用蒸氣</b>都建議跑（<a href="#rinse">步驟</a>）</td></tr>
+    <tr><td>左 2</td><td><svg class="ico"><use href="#i-descale"/></svg></td><td><b>除鈣</b></td><td>清除蒸氣產生器水垢，約 32 分，需要除鈣劑；<b>螢幕出現除鈣提示才需要做</b>，中途不可中斷（<a href="#descale">步驟</a>）</td></tr>
+    <tr><td>左 1</td><td><svg class="ico"><use href="#i-prog"/></svg></td><td><b>自動程式</b></td><td>30 種內建菜單，螢幕顯示 <b>P01～P30</b>，選菜色＋輸入重量自動設定（<a href="#auto">列表</a>）</td></tr>
   </table>
   </div>
-  <p class="muted">實際位置與圖示以機身旋鈕旁的符號為準。從 0 轉到某個功能後，需要等幾秒才會啟用。</p>
+  <div class="box warn"><strong>⚠ 容易轉錯的三個</strong>左 1（刀叉＝自動程式）、左 2（彎管＋水滴＝除鈣）、左 3（點點方格＝沖洗）位置很近。<b>螢幕出現「P01」＝你在自動程式</b>，不是沖洗；如果爐內沒放食物，請馬上按 stop 並轉回 0（部分程式會用到微波，空爐微波會傷機器）。</div>
+  <p class="muted">從 0 轉到某個功能後，需要等幾秒才會啟用。順時針依序：0 → 微波 → 蒸氣 → 熱風 → 全面燒烤 → 熱風燒烤 → 沖洗 → 除鈣 → 自動程式。</p>
 
   <h3>觸控鍵</h3>
   <div class="table-wrap">
@@ -312,7 +367,7 @@
   <h2><span class="num">4</span>微波操作</h2>
   <ol>
     <li>食物放在<b>微波可用容器</b>（玻璃、陶瓷、耐熱塑膠），直接放<b>爐底</b>。</li>
-    <li>左旋鈕轉到 <kbd class="knob">〰 微波</kbd>，螢幕預設顯示最高瓦數。</li>
+    <li>左旋鈕轉到 <kbd class="knob">右1 〰 微波</kbd>，螢幕預設顯示最高瓦數。</li>
     <li>重複按 <kbd>〰</kbd> 選瓦數，螢幕出現建議時間。</li>
     <li>右旋鈕調時間 → <kbd class="go">start</kbd>。過程中也可以轉右旋鈕改時間。</li>
     <li>時間到會嗶聲、自動停止；轉回 0 關機。</li>
@@ -370,7 +425,7 @@
   </div>
   <ol>
     <li><b>拿掉烤架</b>，玻璃烤盤放<b>第 3 層</b>，蒸盤放進玻璃烤盤，食物放蒸盤上。</li>
-    <li>左旋鈕轉到 <kbd class="knob">♨ 蒸氣</kbd>，預設強度 3、20 分，水箱箭頭會閃。</li>
+    <li>左旋鈕轉到 <kbd class="knob">右2 ♨ 蒸氣</kbd>，預設強度 3、20 分，水箱箭頭會閃。</li>
     <li>按水箱蓋中間打開 → 取出水箱 → 加<b>冷水</b>到 <b>MAX</b> → 推到底 → 蓋上。</li>
     <li>按 <kbd>♨</kbd> 選強度、右旋鈕調時間 → <kbd class="go">start</kbd>。</li>
     <li>時間到會嗶聲。<b>小心開門</b>，讓蒸氣先散一下。</li>
@@ -397,7 +452,7 @@
   <h2><span class="num">6</span>烤箱（熱風）與燒烤</h2>
   <h3>熱風 / 熱風燒烤</h3>
   <ol>
-    <li>左旋鈕轉到 <kbd class="knob">熱風</kbd> 或 <kbd class="knob">熱風燒烤</kbd>，螢幕顯示預設溫度。</li>
+    <li>左旋鈕轉到 <kbd class="knob">右3 熱風</kbd> 或 <kbd class="knob">左4 熱風燒烤</kbd>，螢幕顯示預設溫度。</li>
     <li>右旋鈕調溫度；需要時按 <kbd>⏱</kbd> 兩下設烹調時間。</li>
     <li>（建議）短按 <kbd>⇡</kbd> 開<b>快速預熱</b>（溫度 100°C 以上才有，最多 15 分自動結束）。</li>
     <li><kbd class="go">start</kbd>。下方紅條 <b>5 格全紅</b>或快速預熱嗶聲後，再放食物。</li>
@@ -406,7 +461,7 @@
 
   <h3>全面燒烤（上火）</h3>
   <ol>
-    <li>左旋鈕轉到 <kbd class="knob">燒烤</kbd> → 右旋鈕選段數 1～3。</li>
+    <li>左旋鈕轉到 <kbd class="knob">右4 全面燒烤</kbd> → 右旋鈕選段數 1～3。</li>
     <li>設時間 → <kbd class="go">start</kbd>。燒烤時紅條會整條亮。</li>
     <li>食物直接放<b>烤架（第 3 層）</b>，玻璃烤盤放<b>第 1 層</b>接油；<b>關門燒烤</b>。</li>
   </ol>
@@ -487,7 +542,7 @@
 <section id="auto">
   <h2><span class="num">8</span>30 種自動程式</h2>
   <ol>
-    <li>左旋鈕轉到 <kbd class="knob">🍴 程式</kbd>，螢幕顯示第一個菜色編號和預設重量。</li>
+    <li>左旋鈕轉到 <kbd class="knob">左1 🍴 自動程式</kbd>，螢幕顯示第一個菜色編號和預設重量。</li>
     <li>右旋鈕選<b>菜色編號</b> → 按 <kbd>🍴</kbd> 切到重量 → 右旋鈕設<b>重量</b>（只能在範圍內）。</li>
     <li><kbd class="go">start</kbd>，機器自動決定時間。開始後就<b>不能改菜色和重量</b>（要改：長按 <kbd>🍴</kbd> 4 秒或開門重設）。</li>
     <li>中途嗶聲提示時，依指示<b>翻面或攪拌</b>，關門後按 start 繼續。</li>
@@ -593,7 +648,7 @@
 
   <h3 id="rinse">沖洗程序（Rinse）</h3>
   <ol>
-    <li>左旋鈕轉到 <kbd class="knob">沖洗</kbd>（時間固定，不能改）。</li>
+    <li>左旋鈕轉到 <kbd class="knob">左3 沖洗（點點方格）</kbd>（時間固定，不能改）。</li>
     <li>打開水箱蓋 → 取出<b>集水盒倒空</b>後推回。</li>
     <li>水箱倒掉殘水、沖乾淨，加<b>新鮮清水</b>推回 → 蓋上水箱蓋。</li>
     <li><kbd class="go">start</kbd>，機器把水打過管路排到集水盒，結束會嗶聲。</li>
@@ -622,7 +677,7 @@
   </div>
   <h3>步驟（總共約 32 分）</h3>
   <ol>
-    <li>左旋鈕轉到 <kbd class="knob">除鈣</kbd>（時間固定約 31 分）。</li>
+    <li>左旋鈕轉到 <kbd class="knob">左2 除鈣（彎管＋水滴）</kbd>（時間固定約 31 分）。</li>
     <li>打開水箱蓋 → 集水盒倒空推回。</li>
     <li>取出水箱，倒入<b>除鈣溶液</b>，推到底 → 蓋上水箱蓋 → <kbd class="go">start</kbd>。</li>
     <li>約 31 分後嗶聲、機器暫停。</li>
