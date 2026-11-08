@@ -119,6 +119,9 @@
     display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .8rem; color: #333;
   }
   .knobtable td:nth-child(2) { text-align: center; }
+  .acc { display: inline-block; padding: 0 7px; border-radius: 6px; font-size: .8em; font-weight: 700; color: #fff; white-space: nowrap; margin-right: 3px; }
+  .a-steam { background: #2b7a4b; } .a-rack { background: #5f6670; } .a-glass { background: #1d5fa8; } .a-floor { background: #8a5a14; }
+  .setup { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin: 10px 0 14px; }
   @media (max-width: 560px) {
     .dial { grid-template-columns: 1fr 84px 1fr; }
     .dial .dialknob { width: 80px; height: 80px; }
@@ -142,7 +145,8 @@
 <nav class="toc">
   <a href="#quick">⚡ 30 秒速查</a>
   <a href="#first">首次使用</a>
-  <a href="#parts">面板與配件</a>
+  <a href="#parts">面板</a>
+  <a href="#acc">配件擺法</a>
   <a href="#knob">旋鈕圖示</a>
   <a href="#modes">功能總覽</a>
   <a href="#mw">微波</a>
@@ -271,10 +275,10 @@
     <tr><td>左 4</td><td><svg class="ico"><use href="#i-hagrill"/></svg></td><td><b>熱風燒烤</b></td><td>上火＋風扇，100～190°C；烤全雞、雞腿、整條魚、大塊肉</td></tr>
     <tr><td>左 3</td><td><svg class="ico"><use href="#i-dots"/></svg></td><td><b>除鈣</b></td><td>清除蒸氣產生器水垢，約 32 分，需要除鈣劑；<b>螢幕出現除鈣提示才需要做</b>，中途不可中斷（<a href="#descale">步驟</a>）。<span class="muted">誤開時螢幕會顯示約 30 分倒數＋水箱、集水盒圖示</span></td></tr>
     <tr><td>左 2</td><td><svg class="ico"><use href="#i-pipe"/></svg></td><td><b>沖洗</b></td><td>用清水沖洗蒸氣管路，時間固定（比除鈣短很多）；<b>第一次使用、每次蒸完、很久沒用蒸氣</b>都建議跑（<a href="#rinse">步驟</a>）</td></tr>
-    <tr><td>左 1</td><td><svg class="ico"><use href="#i-prog"/></svg></td><td><b>自動程式</b></td><td>30 種內建菜單，螢幕顯示 <b>P01～P30</b>，選菜色＋輸入重量自動設定（<a href="#auto">列表</a>）</td></tr>
+    <tr><td>左 1</td><td><svg class="ico"><use href="#i-prog"/></svg></td><td><b>自動程式</b></td><td>30 種內建菜單，螢幕顯示 <b>P01～P30</b>（台灣版：烘焙、海鮮、肉類、蔬菜、主食），選菜色＋輸入重量自動設定（<a href="#auto">列表</a>）</td></tr>
   </table>
   </div>
-  <div class="box warn"><strong>⚠ 容易轉錯的三個</strong>左 1（刀叉＝自動程式）、左 2（彎管＋水滴＝沖洗）、左 3（點點方格＝除鈣）位置很近。<b>螢幕出現「P01」＝你在自動程式</b>，不是沖洗；如果爐內沒放食物，請馬上按 stop 並轉回 0（部分程式會用到微波，空爐微波會傷機器）。</div>
+  <div class="box warn"><strong>⚠ 容易轉錯的三個</strong>左 1（刀叉＝自動程式）、左 2（彎管＋水滴＝沖洗）、左 3（點點方格＝除鈣）位置很近。<b>螢幕出現「P01」＝你在自動程式</b>，不是沖洗；誤轉時按 stop 並轉回 0 即可，不要讓它空爐跑。</div>
   <p class="muted">從 0 轉到某個功能後，需要等幾秒才會啟用。順時針依序：0 → 微波 → 蒸氣 → 熱風 → 全面燒烤 → 熱風燒烤 → 除鈣 → 沖洗 → 自動程式。</p>
 
   <h3>觸控鍵</h3>
@@ -315,23 +319,25 @@
     <div class="chip"><b>集水盒（左邊）</b><small>只在沖洗、除鈣時接水；平常蒸東西不會有水</small></div>
   </div>
 
-  <h3>隨附配件</h3>
+  <h3 id="acc">原廠配件：3 樣東西怎麼用</h3>
   <div class="table-wrap">
   <table>
-    <tr><th>配件</th><th>用途</th><th>微波可用？</th></tr>
-    <tr><td><b>烤架</b></td><td>烘焙、燒烤（牛排、香腸、吐司），或放淺烤盤</td><td>組合模式可，純微波不建議</td></tr>
-    <tr><td><b>玻璃烤盤</b></td><td>烹調、燒烤時接油；蒸氣時當底盤</td><td>✅ 可</td></tr>
-    <tr><td><b>蒸盤（蒸煮容器）</b></td><td>蒸飯、馬鈴薯、蔬菜、魚；放在玻璃烤盤裡</td><td>✅ 可（蒸氣＋微波）</td></tr>
+    <tr><th>配件</th><th>長相</th><th>主要用途</th><th>可以用在</th><th>❌ 不可以用在</th></tr>
+    <tr><td><b>黑色蒸盤</b><br><span class="muted">（蒸煮容器）</span></td><td>黑色塑膠、滿滿橢圓孔、四角有腳</td><td>蒸魚、蒸菜、蒸地瓜、蒸包子饅頭；食物直接放上面</td><td>蒸氣、蒸氣＋微波</td><td><b>熱風、燒烤、熱風＋蒸氣</b>（塑膠，高溫會變形）</td></tr>
+    <tr><td><b>玻璃烤盤</b></td><td>透明耐熱玻璃深盤</td><td>放食物烤、接油；蒸氣時當蒸盤的底座（接冷凝水）</td><td>所有模式（含純微波）</td><td>熱的時候不要放在濕冷的檯面上（會裂）</td></tr>
+    <tr><td><b>不鏽鋼烤架</b></td><td>金屬網架</td><td>燒烤、回烤、烘焙；或放烤模／烤皿</td><td>熱風、燒烤、組合模式</td><td>純微波（金屬會擋微波）；蒸的時候拿出來</td></tr>
   </table>
   </div>
-  <div class="box info"><strong>層架位置</strong>爐內有 <b>4 層</b>，由下往上數 1～4；<b>爐底＝第 0 層</b>。
-    <ul>
-      <li><b>純微波</b>：容器直接放<b>爐底（第 0 層）</b>，微波效果最好。</li>
-      <li><b>蒸氣</b>：拿掉烤架，<b>玻璃烤盤放第 3 層</b>，蒸盤放在玻璃烤盤上。</li>
-      <li><b>燒烤</b>：烤架放第 3 層，玻璃烤盤放第 1 層接油。</li>
-      <li><b>烘焙</b>：一般放第 1～2 層。</li>
-    </ul>
+  <h3>5 種標準擺法（下面各表用這些標籤）</h3>
+  <div class="setup">
+    <div class="chip"><b><span class="acc a-steam">蒸</span> 蒸的擺法</b><small>黑色蒸盤放進玻璃烤盤，一起插<b>第 3 層</b>；烤架拿出來。水箱加滿。</small></div>
+    <div class="chip"><b><span class="acc a-rack">烤</span> 回烤擺法</b><small>烤架插<b>第 2 層</b>放食物，玻璃烤盤插<b>第 1 層</b>接油屑。熱風四面吹，底部不濕軟。</small></div>
+    <div class="chip"><b><span class="acc a-rack">烤高</span> 燒烤擺法</b><small>烤架插<b>第 3 層</b>（靠近上火），玻璃烤盤插<b>第 1 層</b>接油。牛排、香腸、吐司。</small></div>
+    <div class="chip"><b><span class="acc a-glass">盤</span> 烤盤擺法</b><small>食物直接放玻璃烤盤（可墊烘焙紙），插<b>第 2 層</b>。薯條、餅乾、披薩。</small></div>
+    <div class="chip"><b><span class="acc a-floor">底</span> 爐底擺法</b><small>可微波的碗盤／耐熱烤皿直接放<b>爐底</b>；烤架、烤盤拿出來。微波效果最好的位置。</small></div>
   </div>
+  <div class="box info"><strong>層架位置</strong>爐內有 <b>4 層</b>，由下往上數 1～4；<b>爐底＝第 0 層</b>。配件要整片推到底。</div>
+  <div class="box warn"><strong>⚠ 黑色蒸盤是塑膠</strong>只能用在「蒸氣」和「蒸氣＋微波」。用熱風或燒烤（包括熱風＋蒸氣）時一定要拿出來，改用玻璃烤盤或烤架。</div>
 </section>
 
 <!-- 功能總覽 -->
@@ -490,38 +496,38 @@
 <!-- 台灣常用菜 -->
 <section id="best">
   <h2><span class="num">★</span>台灣家庭常用菜：建議設定</h2>
-  <div class="box info"><strong>看表方式</strong>層架：0＝爐底、3＝第 3 層。蒸的東西一律「玻璃烤盤＋蒸盤」放第 3 層、水箱加滿。標 <b>原廠</b> 的是手冊建議值；標 <b>建議</b> 的是一般使用經驗，請依份量微調。</div>
+  <div class="box info"><strong>看表方式</strong>配件擺法：<span class="acc a-steam">蒸</span>蒸盤放進玻璃烤盤、第 3 層　<span class="acc a-rack">烤</span>烤架第 2 層＋玻璃盤第 1 層　<span class="acc a-rack">烤高</span>烤架第 3 層＋玻璃盤第 1 層　<span class="acc a-glass">盤</span>玻璃烤盤第 2 層　<span class="acc a-floor">底</span>容器放爐底（<a href="#acc">詳細說明</a>）。<br>標 <b>原廠</b> 的是手冊建議值；標 <b>建議</b> 的是一般使用經驗，請依份量微調。</div>
   <div class="table-wrap">
   <table>
-    <tr><th>菜色</th><th>功能與設定</th><th>時間</th><th>來源</th></tr>
-    <tr><td><b>熱剩菜／便當（冷藏）</b></td><td>微波 600W，加蓋放爐底，中途攪拌</td><td>3～5 分</td><td>建議</td></tr>
-    <tr><td><b>熱便當不乾版</b></td><td>蒸氣 3 ＋ 微波 360W，不加蓋放第 3 層</td><td>9～14 分（冷凍 400 g）</td><td>原廠</td></tr>
-    <tr><td><b>熱湯 2 碗</b></td><td>微波 600W</td><td>3～4 分</td><td>原廠</td></tr>
-    <tr><td><b>熱飲／牛奶 200 ml</b></td><td>微波 1000W，杯中放湯匙</td><td>1～2 分</td><td>原廠</td></tr>
-    <tr><td><b>清蒸魚片 400 g</b></td><td>蒸氣 3</td><td>15～17 分</td><td>原廠</td></tr>
-    <tr><td><b>清蒸整條魚 300 g</b></td><td>蒸氣 3，魚肚淋檸檬汁/薑絲</td><td>18～22 分</td><td>原廠</td></tr>
-    <tr><td><b>冷凍包子／饅頭</b></td><td>蒸氣 2，不用退冰</td><td>20～25 分</td><td>原廠（蒸酵母點心）</td></tr>
-    <tr><td><b>蒸蛋／茶碗蒸</b></td><td>蒸氣 2，碗蓋盤子或耐熱保鮮膜</td><td>12～15 分</td><td>建議</td></tr>
-    <tr><td><b>布丁（焦糖布丁）</b></td><td>蒸氣 3，小烤皿放玻璃烤盤</td><td>40～50 分</td><td>原廠</td></tr>
-    <tr><td><b>蒸地瓜／馬鈴薯塊 500 g</b></td><td>蒸氣 3</td><td>30～32 分（整條地瓜 40～50）</td><td>原廠／建議</td></tr>
-    <tr><td><b>玉米 2 根</b></td><td>蒸氣 3</td><td>25～35 分</td><td>原廠</td></tr>
-    <tr><td><b>青花菜 500 g</b></td><td>蒸氣 3</td><td>20～23 分（小朵冷凍 14～16）</td><td>原廠</td></tr>
-    <tr><td><b>菠菜／青菜 250 g</b></td><td>蒸氣 3</td><td>5～7 分</td><td>原廠</td></tr>
-    <tr><td><b>微波煮白飯</b></td><td>米 125 g＋水 300 ml，深碗加蓋放爐底：600W → 180W</td><td>4～6 分 → 12～15 分，燜 5～10 分</td><td>原廠</td></tr>
-    <tr><td><b>烤雞腿／雞肉塊 800 g</b></td><td>熱風燒烤 190°C ＋ 微波 180W，皮朝上放爐底</td><td>20～35 分</td><td>原廠</td></tr>
-    <tr><td><b>烤全雞 1.3 kg</b></td><td>熱風燒烤 190°C ＋ 微波 360W ＋ 蒸氣 3，胸朝上</td><td>40～45 分，靜置 5 分</td><td>原廠</td></tr>
-    <tr><td><b>牛排 2～3 cm</b></td><td>燒烤 3，烤架第 3 層、玻璃盤第 1 層</td><td>10～15 分 → 翻面 5～10 分</td><td>原廠</td></tr>
-    <tr><td><b>香腸 4～6 條</b></td><td>燒烤 3，同上</td><td>10～15 分 → 翻面 5～10 分</td><td>原廠</td></tr>
-    <tr><td><b>烤吐司</b></td><td>燒烤 3，烤架第 3 層</td><td>3～6 分</td><td>原廠</td></tr>
-    <tr><td><b>冷凍薯條／雞塊</b></td><td>熱風 190～210°C，玻璃烤盤第 2 層，平鋪一層</td><td>25～40 分</td><td>原廠</td></tr>
-    <tr><td><b>手作披薩</b></td><td>熱風 210～230°C，玻璃烤盤第 2 層</td><td>25～35 分</td><td>原廠</td></tr>
-    <tr><td><b>冷凍披薩（已烤過）</b></td><td>熱風 180～190°C ＋ 微波 180W，烤架第 2 層</td><td>8～15 分</td><td>原廠</td></tr>
-    <tr><td><b>焗烤馬鈴薯</b></td><td>熱風 170～180°C ＋ 微波 600W，爐底</td><td>20～30 分</td><td>原廠</td></tr>
-    <tr><td><b>焗烤義大利麵／千層麵（熟料）</b></td><td>熱風 180～190°C ＋ 微波 600W，爐底</td><td>12～17 分</td><td>原廠</td></tr>
-    <tr><td><b>餅乾</b></td><td>熱風 150～170°C，玻璃烤盤第 2 層</td><td>20～35 分</td><td>原廠</td></tr>
-    <tr><td><b>磅蛋糕／戚風</b></td><td>熱風 160～170°C，第 1 層</td><td>60～80 分（戚風 40～50）</td><td>原廠</td></tr>
-    <tr><td><b>麵包捲</b></td><td>熱風 200～210°C ＋ 蒸氣 3，第 1 層</td><td>25～35 分</td><td>原廠</td></tr>
-    <tr><td><b>微波爆米花 100 g</b></td><td>微波 600W</td><td>3～5 分</td><td>原廠</td></tr>
+    <tr><th>菜色</th><th>配件擺法</th><th>功能與設定</th><th>時間</th><th>來源</th></tr>
+    <tr><td><b>熱剩菜／便當（冷藏）</b></td><td><span class="acc a-floor">底</span></td><td>微波 600W，碗盤加蓋，中途攪拌</td><td>3～5 分</td><td>建議</td></tr>
+    <tr><td><b>熱便當不乾版</b></td><td><span class="acc a-steam">蒸</span></td><td>便當盒（可微波、拿掉鋁箔和蓋子）直接放黑色蒸盤上：蒸氣 3 ＋ 微波 360W</td><td>9～14 分（冷凍 400 g）</td><td>原廠</td></tr>
+    <tr><td><b>熱湯 2 碗</b></td><td><span class="acc a-floor">底</span></td><td>微波 600W</td><td>3～4 分</td><td>原廠</td></tr>
+    <tr><td><b>熱飲／牛奶 200 ml</b></td><td><span class="acc a-floor">底</span></td><td>微波 1000W，杯中放湯匙</td><td>1～2 分</td><td>原廠</td></tr>
+    <tr><td><b>清蒸魚片 400 g</b></td><td><span class="acc a-steam">蒸</span></td><td>蒸氣 3，魚直接放蒸盤（要留湯汁就先放耐熱淺盤再放蒸盤上）</td><td>15～17 分</td><td>原廠</td></tr>
+    <tr><td><b>清蒸整條魚 300 g</b></td><td><span class="acc a-steam">蒸</span></td><td>蒸氣 3，魚肚淋檸檬汁／薑絲</td><td>18～22 分</td><td>原廠</td></tr>
+    <tr><td><b>冷凍包子／饅頭</b></td><td><span class="acc a-steam">蒸</span></td><td>蒸氣 2，不用退冰；彼此留 2 cm（會膨脹）</td><td>20～25 分</td><td>原廠（蒸酵母點心）</td></tr>
+    <tr><td><b>蒸蛋／茶碗蒸</b></td><td><span class="acc a-steam">蒸</span></td><td>蒸氣 2，碗蓋盤子或耐熱保鮮膜，碗放在蒸盤上</td><td>12～15 分</td><td>建議</td></tr>
+    <tr><td><b>布丁（焦糖布丁）</b></td><td><span class="acc a-steam">蒸</span></td><td>蒸氣 3，布丁杯放在蒸盤上</td><td>40～50 分</td><td>原廠</td></tr>
+    <tr><td><b>蒸地瓜／馬鈴薯塊 500 g</b></td><td><span class="acc a-steam">蒸</span></td><td>蒸氣 3，平鋪不要疊</td><td>30～32 分（整條地瓜 40～50）</td><td>原廠／建議</td></tr>
+    <tr><td><b>玉米 2 根</b></td><td><span class="acc a-steam">蒸</span></td><td>蒸氣 3</td><td>25～35 分</td><td>原廠</td></tr>
+    <tr><td><b>青花菜 500 g</b></td><td><span class="acc a-steam">蒸</span></td><td>蒸氣 3</td><td>20～23 分（小朵冷凍 14～16）</td><td>原廠</td></tr>
+    <tr><td><b>菠菜／青菜 250 g</b></td><td><span class="acc a-steam">蒸</span></td><td>蒸氣 3</td><td>5～7 分</td><td>原廠</td></tr>
+    <tr><td><b>微波煮白飯</b></td><td><span class="acc a-floor">底</span></td><td>米 125 g＋水 300 ml，深碗加蓋：600W → 180W</td><td>4～6 分 → 12～15 分，燜 5～10 分</td><td>原廠</td></tr>
+    <tr><td><b>烤雞腿／雞肉塊 800 g</b></td><td><span class="acc a-floor">底</span></td><td>耐熱深烤皿放爐底，皮朝上：熱風燒烤 190°C ＋ 微波 180W</td><td>20～35 分</td><td>原廠</td></tr>
+    <tr><td><b>烤全雞 1.3 kg</b></td><td><span class="acc a-floor">底</span></td><td>耐熱深烤皿（不加蓋）放爐底，胸朝上：熱風燒烤 190°C ＋ 微波 360W ＋ 蒸氣 3</td><td>40～45 分，靜置 5 分</td><td>原廠</td></tr>
+    <tr><td><b>牛排 2～3 cm</b></td><td><span class="acc a-rack">烤高</span></td><td>全面燒烤 3，肉直接放烤架</td><td>10～15 分 → 翻面 5～10 分</td><td>原廠</td></tr>
+    <tr><td><b>香腸 4～6 條</b></td><td><span class="acc a-rack">烤高</span></td><td>全面燒烤 3</td><td>10～15 分 → 翻面 5～10 分</td><td>原廠</td></tr>
+    <tr><td><b>烤吐司</b></td><td><span class="acc a-rack">烤高</span></td><td>全面燒烤 3（吐司直接放烤架）</td><td>3～6 分</td><td>原廠</td></tr>
+    <tr><td><b>冷凍薯條／雞塊</b></td><td><span class="acc a-glass">盤</span></td><td>熱風 190～210°C，平鋪一層</td><td>25～40 分</td><td>原廠</td></tr>
+    <tr><td><b>手作披薩</b></td><td><span class="acc a-glass">盤</span></td><td>熱風 210～230°C</td><td>25～35 分</td><td>原廠</td></tr>
+    <tr><td><b>冷凍披薩（已烤過）</b></td><td><span class="acc a-rack">烤</span></td><td>披薩直接放烤架：熱風 180～190°C ＋ 微波 180W</td><td>8～15 分</td><td>原廠</td></tr>
+    <tr><td><b>焗烤馬鈴薯</b></td><td><span class="acc a-floor">底</span></td><td>耐熱焗烤皿放爐底：熱風 170～180°C ＋ 微波 600W</td><td>20～30 分</td><td>原廠</td></tr>
+    <tr><td><b>焗烤義大利麵／千層麵（熟料）</b></td><td><span class="acc a-floor">底</span></td><td>耐熱焗烤皿放爐底：熱風 180～190°C ＋ 微波 600W</td><td>12～17 分</td><td>原廠</td></tr>
+    <tr><td><b>餅乾</b></td><td><span class="acc a-glass">盤</span></td><td>熱風 150～170°C，墊烘焙紙</td><td>20～35 分</td><td>原廠</td></tr>
+    <tr><td><b>磅蛋糕／戚風</b></td><td><span class="acc a-rack">烤</span></td><td>烤模放烤架，烤架改插<b>第 1 層</b>：熱風 160～170°C</td><td>60～80 分（戚風 40～50）</td><td>原廠</td></tr>
+    <tr><td><b>麵包捲</b></td><td><span class="acc a-glass">盤</span></td><td>玻璃烤盤改插<b>第 1 層</b>：熱風 200～210°C ＋ 蒸氣 3</td><td>25～35 分</td><td>原廠</td></tr>
+    <tr><td><b>微波爆米花 100 g</b></td><td><span class="acc a-floor">底</span></td><td>微波 600W</td><td>3～5 分</td><td>原廠</td></tr>
   </table>
   </div>
   <h3>🔧 結果不對時怎麼調</h3>
@@ -553,16 +559,16 @@
 
   <div class="table-wrap">
   <table>
-    <tr><th>食物</th><th>最適合的組合</th><th>層架／配件</th><th>時間</th><th>重點</th></tr>
-    <tr><td><b>冷掉的薯條</b></td><td><kbd class="knob">右3 熱風</kbd> <b>210°C</b>＋快速預熱<br><span class="muted">不加微波、不加蒸氣</span></td><td>玻璃烤盤第 2 層，<b>平鋪一層</b></td><td>預熱好放入 <b>6～8 分</b>，中途翻一次</td><td>薯條要的是「乾」，微波和蒸氣都會讓它變軟。量少可改 <kbd class="knob">左4 熱風燒烤</kbd> 190°C 5～7 分</td></tr>
-    <tr><td><b>速食漢堡</b><br><span class="muted">室溫／冷藏</span></td><td><kbd class="knob">右3 熱風</kbd> <b>180°C</b> ＋ 微波 <b>180W</b></td><td>烤架第 2 層（下方放玻璃烤盤接油）</td><td>室溫 <b>4～5 分</b>／冷藏 <b>6～8 分</b></td><td><b>拆掉包裝紙（含鋁箔不可微波）</b>，先抽出生菜、番茄、酸黃瓜，烤完再放回</td></tr>
-    <tr><td><b>漢堡（講究版）</b></td><td>麵包、肉排分開：<br>肉排 熱風 180°C＋微波 360W<br>麵包 熱風 180°C</td><td>烤架第 2 層</td><td>肉排 3～4 分；麵包最後放入 2 分</td><td>肉排熱透、麵包剛好酥，不會一邊乾一邊冷</td></tr>
-    <tr><td><b>歐式麵包／法棍／餐包</b></td><td><kbd class="knob">右3 熱風</kbd> <b>180°C</b> ＋ 蒸氣 <b>2</b> → 最後 2 分<b>關掉蒸氣</b></td><td>烤架第 2 層</td><td><b>6～8 分</b>（大顆 10 分）</td><td>蒸氣讓內部回軟、關蒸氣後外殼變脆。表面噴一點水效果更好</td></tr>
-    <tr><td><b>可頌／酥皮類</b></td><td><kbd class="knob">右3 熱風</kbd> <b>170°C</b><br><span class="muted">不加蒸氣</span></td><td>烤架第 2 層</td><td><b>3～5 分</b></td><td>奶油多的酥皮靠乾熱就會酥，加蒸氣反而塌</td></tr>
-    <tr><td><b>吐司／切片麵包</b></td><td><kbd class="knob">右4 全面燒烤</kbd> 段數 <b>3</b></td><td>烤架第 3 層</td><td><b>3～5 分</b></td><td>邊烤邊看，很快會焦</td></tr>
-    <tr><td><b>饅頭／包子：軟 Q 版</b><br><span class="muted">冷藏</span></td><td><kbd class="knob">右2 蒸氣</kbd> 強度 <b>3</b> ＋ 微波 <b>360W</b></td><td>玻璃烤盤＋蒸盤第 3 層</td><td><b>5～7 分</b>（冷凍 10～12 分）</td><td>比純蒸快一半，跟剛蒸好一樣軟</td></tr>
-    <tr><td><b>饅頭／包子：外酥內軟版</b><br><span class="muted">像烤饅頭、水煎包底</span></td><td><kbd class="knob">右3 熱風</kbd> <b>190°C</b> ＋ 蒸氣 <b>3</b> → 最後 3～4 分<b>關掉蒸氣</b></td><td>玻璃烤盤第 2 層（底部刷一點油）</td><td>冷藏 <b>10～12 分</b>／冷凍 <b>18～22 分</b></td><td>前段蒸氣把裡面蒸透變軟，後段乾熱讓外皮金黃微酥</td></tr>
-    <tr><td><b>炸雞／鹽酥雞／雞塊</b></td><td><kbd class="knob">左4 熱風燒烤</kbd> <b>190°C</b> ＋ 微波 <b>180W</b></td><td>烤架第 2 層＋下方玻璃烤盤</td><td><b>5～8 分</b></td><td>微波熱透骨邊，熱風燒烤把麵衣逼出油、恢復酥脆</td></tr>
+    <tr><th>食物</th><th>最適合的組合</th><th>配件擺法</th><th>時間</th><th>重點</th></tr>
+    <tr><td><b>冷掉的薯條</b></td><td><kbd class="knob">右3 熱風</kbd> <b>210°C</b>＋快速預熱<br><span class="muted">不加微波、不加蒸氣</span></td><td><span class="acc a-glass">盤</span>薯條直接平鋪在玻璃烤盤，第 2 層</td><td>預熱好放入 <b>6～8 分</b>，中途翻一次</td><td>薯條要的是「乾」，微波和蒸氣都會讓它變軟。量少可改 <kbd class="knob">左4 熱風燒烤</kbd> 190°C 5～7 分</td></tr>
+    <tr><td><b>速食漢堡</b><br><span class="muted">室溫／冷藏</span></td><td><kbd class="knob">右3 熱風</kbd> <b>180°C</b> ＋ 微波 <b>180W</b></td><td><span class="acc a-rack">烤</span>漢堡直接放烤架第 2 層，玻璃烤盤第 1 層接油</td><td>室溫 <b>4～5 分</b>／冷藏 <b>6～8 分</b></td><td><b>拆掉包裝紙（含鋁箔不可微波）</b>，先抽出生菜、番茄、酸黃瓜，烤完再放回</td></tr>
+    <tr><td><b>漢堡（講究版）</b></td><td>麵包、肉排分開：<br>肉排 熱風 180°C＋微波 360W<br>麵包 熱風 180°C</td><td><span class="acc a-rack">烤</span>肉排先上烤架，麵包剖半最後 2 分放上烤架</td><td>肉排 3～4 分；麵包最後放入 2 分</td><td>肉排熱透、麵包剛好酥，不會一邊乾一邊冷</td></tr>
+    <tr><td><b>歐式麵包／法棍／餐包</b></td><td><kbd class="knob">右3 熱風</kbd> <b>180°C</b> ＋ 蒸氣 <b>2</b> → 最後 2 分<b>關掉蒸氣</b></td><td><span class="acc a-rack">烤</span>麵包直接放烤架，玻璃烤盤第 1 層</td><td><b>6～8 分</b>（大顆 10 分）</td><td>蒸氣讓內部回軟、關蒸氣後外殼變脆。表面噴一點水效果更好</td></tr>
+    <tr><td><b>可頌／酥皮類</b></td><td><kbd class="knob">右3 熱風</kbd> <b>170°C</b><br><span class="muted">不加蒸氣</span></td><td><span class="acc a-rack">烤</span>可頌放烤架，玻璃烤盤第 1 層接酥皮屑</td><td><b>3～5 分</b></td><td>奶油多的酥皮靠乾熱就會酥，加蒸氣反而塌</td></tr>
+    <tr><td><b>吐司／切片麵包</b></td><td><kbd class="knob">右4 全面燒烤</kbd> 段數 <b>3</b></td><td><span class="acc a-rack">烤高</span>吐司直接放烤架第 3 層</td><td><b>3～5 分</b></td><td>邊烤邊看，很快會焦</td></tr>
+    <tr><td><b>饅頭／包子：軟 Q 版</b><br><span class="muted">冷藏</span></td><td><kbd class="knob">右2 蒸氣</kbd> 強度 <b>3</b> ＋ 微波 <b>360W</b></td><td><span class="acc a-steam">蒸</span>包子饅頭放黑色蒸盤（留間距），蒸盤放進玻璃烤盤，第 3 層</td><td><b>5～7 分</b>（冷凍 10～12 分）</td><td>比純蒸快一半，跟剛蒸好一樣軟</td></tr>
+    <tr><td><b>饅頭／包子：外酥內軟版</b><br><span class="muted">像烤饅頭、水煎包底</span></td><td><kbd class="knob">右3 熱風</kbd> <b>190°C</b> ＋ 蒸氣 <b>3</b> → 最後 3～4 分<b>關掉蒸氣</b></td><td><span class="acc a-glass">盤</span>直接放玻璃烤盤第 2 層，底部刷一點油；<b>不要用黑色蒸盤</b>（塑膠不耐熱風）</td><td>冷藏 <b>10～12 分</b>／冷凍 <b>18～22 分</b></td><td>前段蒸氣把裡面蒸透變軟，後段乾熱讓外皮金黃微酥</td></tr>
+    <tr><td><b>炸雞／鹽酥雞／雞塊</b></td><td><kbd class="knob">左4 熱風燒烤</kbd> <b>190°C</b> ＋ 微波 <b>180W</b></td><td><span class="acc a-rack">烤</span>炸雞放烤架第 2 層，玻璃烤盤第 1 層接油</td><td><b>5～8 分</b></td><td>微波熱透骨邊，熱風燒烤把麵衣逼出油、恢復酥脆</td></tr>
   </table>
   </div>
 
@@ -579,7 +585,8 @@
   <div class="box tip"><strong>💡 讓效果更好的小技巧（一般經驗）</strong>
     <ul>
       <li><b>熱風類一定要預熱</b>：短按 <kbd>⇡</kbd> 快速預熱，嗶聲後再放食物，外皮才會一下子變脆。</li>
-      <li>放<b>烤架</b>比直接放烤盤好，底部熱風流得到，不會底部濕軟。</li>
+      <li>回烤放<b>不鏽鋼烤架</b>比直接放玻璃烤盤好，底部熱風流得到、不會濕軟；玻璃烤盤放下一層接油屑就好。</li>
+      <li><b>黑色蒸盤只用在純蒸或蒸＋微波</b>（例如軟 Q 版包子）；只要有熱風或燒烤，就換成烤架或玻璃烤盤。</li>
       <li>食物之間留空隙、不要疊；薯條、炸物尤其要平鋪。</li>
       <li>醬汁多的部分（生菜、番茄、美乃滋）先拿掉，烤完再加回。</li>
       <li>麵包太乾硬：烤前表面用手沾水抹一下或噴水，再用「熱風＋蒸氣」。</li>
@@ -598,43 +605,44 @@
     <li><kbd class="go">start</kbd>，機器自動決定時間。開始後就<b>不能改菜色和重量</b>（要改：長按 <kbd>🍴</kbd> 4 秒或開門重設）。</li>
     <li>中途嗶聲提示時，依指示<b>翻面或攪拌</b>，關門後按 start 繼續。</li>
   </ol>
-  <div class="box info"><strong>使用前</strong>食物拆包裝秤重（無法精確就四捨五入）、肉用冷藏溫度、冷凍品直接從冷凍庫拿出、放進<b>冷的</b>爐子裡。標「需加水」的程式要先把水箱加滿。</div>
+  <div class="box info"><strong>使用前</strong>食物拆包裝秤重（無法精確就四捨五入）、肉用冷藏溫度、冷凍品直接從冷凍庫拿出、放進<b>冷的</b>爐子裡。蒸類程式要先把水箱加滿。</div>
   <div class="table-wrap">
   <table>
-    <tr><th>類別</th><th>菜色</th><th>配件／層架</th><th>重量 (kg)</th></tr>
-    <tr><td rowspan="4"><b>解凍</b></td><td>絞肉（牛、羊、豬）</td><td>淺盤不加蓋／0</td><td>0.10–1.20</td></tr>
-    <tr><td>魚片</td><td>淺盤不加蓋／0</td><td>0.10–1.00</td></tr>
-    <tr><td>帶骨雞肉塊</td><td>淺盤不加蓋／0（皮朝下）</td><td>0.15–1.20</td></tr>
-    <tr><td>麵包片</td><td>淺盤不加蓋／0</td><td>0.10–0.50</td></tr>
-    <tr><td rowspan="10"><b>禽肉、肉、魚</b></td><td>新鮮雞肉塊（雞腿、半雞）</td><td>烤架＋玻璃盤／3＋2（皮朝下）</td><td>0.15–1.00</td></tr>
-    <tr><td>沙朗 三分熟</td><td>玻璃盤／1</td><td>0.50–2.00</td></tr>
-    <tr><td>沙朗 五分熟</td><td>玻璃盤／1</td><td>0.50–2.00</td></tr>
-    <tr><td>沙朗 全熟</td><td>玻璃盤／1</td><td>0.50–2.00</td></tr>
-    <tr><td>帶骨羊腿 五分熟</td><td>玻璃盤／1</td><td>1.00–2.00</td></tr>
-    <tr><td>帶骨羊腿 全熟</td><td>玻璃盤／1</td><td>1.00–2.00</td></tr>
-    <tr><td>整條鮮魚 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.20–1.20</td></tr>
-    <tr><td>新鮮魚片 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.20–0.50</td></tr>
-    <tr><td>冷凍魚片 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.20–0.50</td></tr>
-    <tr><td>燉菜（生料）</td><td>加蓋容器／0（肉、菜、湯等量，輸入總重）</td><td>0.20–2.00</td></tr>
-    <tr><td rowspan="9"><b>蔬菜、配菜</b></td><td>新鮮青花菜 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.10–1.00</td></tr>
-    <tr><td>冷凍豌豆 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.10–1.00</td></tr>
-    <tr><td>紅蘿蔔片 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.10–0.75</td></tr>
-    <tr><td>綠蘆筍 💧</td><td>蒸盤＋玻璃盤／3（不要疊）</td><td>0.10–0.70</td></tr>
-    <tr><td>半熟蛋 💧</td><td>蒸盤＋玻璃盤／3（冷藏雞蛋）</td><td>2–10 顆</td></tr>
-    <tr><td>米飯</td><td>深碗加蓋／0（米:水＝1:2～3，長米）</td><td>0.10–0.50</td></tr>
-    <tr><td>烤馬鈴薯（帶皮）</td><td>烤架／2（約 250 g/顆，用叉子戳洞）</td><td>0.20–1.50</td></tr>
-    <tr><td>水煮馬鈴薯塊 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.20–0.50</td></tr>
-    <tr><td>糖煮水果 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.30–0.80</td></tr>
-    <tr><td rowspan="7"><b>方便食品</b></td><td>冷凍薯條</td><td>玻璃盤／2（不要疊）</td><td>0.20–0.80</td></tr>
-    <tr><td>冷凍可樂餅</td><td>玻璃盤／2</td><td>0.25–0.80</td></tr>
-    <tr><td>冷藏預烤披薩（薄皮）</td><td>烤架／2</td><td>0.10–0.60</td></tr>
-    <tr><td>冷凍預烤披薩</td><td>烤架／1</td><td>0.10–0.50</td></tr>
-    <tr><td>冷藏焗烤麵（千層麵）</td><td>容器放玻璃盤／2</td><td>0.30–1.00</td></tr>
-    <tr><td>加熱冷藏餐盤</td><td>淺盤放玻璃盤／3</td><td>0.20–0.50</td></tr>
-    <tr><td>加熱冷凍餐盤</td><td>淺盤放玻璃盤／3</td><td>0.20–0.50</td></tr>
+    <tr><th>類別</th><th>編號</th><th>菜色（括號＝可設定的重量或人份）</th></tr>
+    <tr><td rowspan="10"><b>烘焙甜品類</b></td><td><b>P01</b></td><td>巧克力餅乾</td></tr>
+    <tr><td><b>P02</b></td><td>核桃奶香酥</td></tr>
+    <tr><td><b>P03</b></td><td>法式鹹派</td></tr>
+    <tr><td><b>P04</b></td><td>奶油泡芙</td></tr>
+    <tr><td><b>P05</b></td><td>蛋撻</td></tr>
+    <tr><td><b>P06</b></td><td>蒸烤布丁（4–8 人份）</td></tr>
+    <tr><td><b>P07</b></td><td>香橙瑪芬</td></tr>
+    <tr><td><b>P08</b></td><td>芝香吐司</td></tr>
+    <tr><td><b>P09</b></td><td>小餐包</td></tr>
+    <tr><td><b>P10</b></td><td>烤冷凍披薩（0.1–0.5 kg）</td></tr>
+    <tr><td rowspan="5"><b>魚蝦海鮮類</b></td><td><b>P11</b></td><td>清蒸鱸魚（0.3–0.8 kg）</td></tr>
+    <tr><td><b>P12</b></td><td>蒜蓉蒸蝦</td></tr>
+    <tr><td><b>P13</b></td><td>清蒸大閘蟹</td></tr>
+    <tr><td><b>P14</b></td><td>烤鮭魚</td></tr>
+    <tr><td><b>P15</b></td><td>花雕烤黃魚</td></tr>
+    <tr><td rowspan="7"><b>肉類</b></td><td><b>P16</b></td><td>香烤雞翅</td></tr>
+    <tr><td><b>P17</b></td><td>脆皮烤雞（0.6–1.5 kg）</td></tr>
+    <tr><td><b>P18</b></td><td>烤豬肋排</td></tr>
+    <tr><td><b>P19</b></td><td>蓮藕蓮子排骨湯（3／6 人份）</td></tr>
+    <tr><td><b>P20</b></td><td>沙朗，五分熟</td></tr>
+    <tr><td><b>P21</b></td><td>沙朗，全熟</td></tr>
+    <tr><td><b>P22</b></td><td>烤羊腿（1.0–2.0 kg）</td></tr>
+    <tr><td rowspan="4"><b>蔬菜類</b></td><td><b>P23</b></td><td>上湯娃娃菜</td></tr>
+    <tr><td><b>P24</b></td><td>蒜蓉花椰菜</td></tr>
+    <tr><td><b>P25</b></td><td>蒸拌茄子</td></tr>
+    <tr><td><b>P26</b></td><td>香烤地瓜（0.6–1.5 kg）</td></tr>
+    <tr><td rowspan="4"><b>主食類</b></td><td><b>P27</b></td><td>蒸米飯（0.1–0.4 kg）</td></tr>
+    <tr><td><b>P28</b></td><td>蒸饅頭</td></tr>
+    <tr><td><b>P29</b></td><td>蒸五穀雜糧</td></tr>
+    <tr><td><b>P30</b></td><td>蝦仁香菇蒸蛋（1–4 人份）</td></tr>
   </table>
   </div>
-  <p class="muted">💧＝需先把水箱加滿。表格依原廠手冊順序共 30 道，實際<b>程式編號以機身貼紙／中文手冊為準</b>。</p>
+  <p class="muted">以上為<b>台灣版</b>程式，抄錄自爐門內側的程式貼紙（字很小，個別菜名可能有一兩字誤差）。各程式要用哪個配件、放哪一層、要不要加水，請看中文手冊的程式表或螢幕提示；蒸類程式記得先加滿水箱、用 <span class="acc a-steam">蒸</span> 擺法。</p>
+  <div class="box info"><strong>螢幕顯示 P01 是什麼？</strong>P01＝巧克力餅乾（烘焙程式）。如果只是想沖洗卻轉到這裡，按 stop 並轉回 0 即可。</div>
 </section>
 
 <!-- 時間/童鎖/設定 -->
