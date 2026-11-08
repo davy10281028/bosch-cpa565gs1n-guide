@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BOSCH 6系列 微波蒸烤爐 CPA565GS1N 使用手冊（中文速查）</title>
+<style>
+  :root {
+    --bg: #f6f7f8; --card: #ffffff; --ink: #1f2328; --muted: #5f6670;
+    --accent: #c4161c; --accent-soft: #fbe9ea; --line: #e2e5e9;
+    --warn: #b3261e; --warn-soft: #fdecea; --ok: #1e7a4c; --ok-soft: #e6f4ec;
+    --info: #1d5fa8; --info-soft: #e8f0fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15171a; --card: #1f2226; --ink: #eceef1; --muted: #a7aeb8;
+      --accent: #ff5a5f; --accent-soft: #3a1f21; --line: #33373d;
+      --warn: #ff8a80; --warn-soft: #3d2322; --ok: #7dd3a8; --ok-soft: #1f3329;
+      --info: #8fb8ee; --info-soft: #1d2a3b;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.7; font-size: 16px;
+  }
+  header.hero {
+    background: linear-gradient(135deg, #1f2328, #3b4048); color: #fff;
+    padding: 28px 20px 22px;
+  }
+  header.hero h1 { margin: 0 0 4px; font-size: 1.5rem; letter-spacing: .02em; }
+  header.hero p { margin: 0; opacity: .85; font-size: .95rem; }
+  header.hero .tag {
+    display: inline-block; background: #c4161c; color: #fff; border-radius: 999px;
+    padding: 2px 10px; font-size: .8rem; margin-bottom: 8px;
+  }
+  nav.toc {
+    position: sticky; top: 0; z-index: 10; background: var(--card);
+    border-bottom: 1px solid var(--line); overflow-x: auto; white-space: nowrap;
+    padding: 8px 12px; -webkit-overflow-scrolling: touch;
+  }
+  nav.toc a {
+    display: inline-block; color: var(--ink); text-decoration: none; font-size: .9rem;
+    padding: 6px 12px; border-radius: 999px; background: var(--accent-soft); margin-right: 6px;
+  }
+  nav.toc a:hover { background: var(--accent); color: #fff; }
+  main { max-width: 860px; margin: 0 auto; padding: 16px; }
+  section {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 18px 10px; margin: 16px 0;
+  }
+  h2 { margin: 0 0 10px; font-size: 1.25rem; display: flex; align-items: center; gap: 8px; }
+  h2 .num {
+    background: var(--accent); color: #fff; width: 28px; height: 28px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center; font-size: .9rem; flex: none;
+  }
+  h3 { font-size: 1.05rem; margin: 18px 0 6px; }
+  ol, ul { padding-left: 1.3em; margin: 6px 0 12px; }
+  li { margin: 3px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px; font-size: .93rem; }
+  th, td { border: 1px solid var(--line); padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: var(--accent-soft); white-space: nowrap; }
+  .table-wrap { overflow-x: auto; }
+  .box { border-radius: 10px; padding: 10px 14px; margin: 10px 0 14px; font-size: .95rem; }
+  .box.warn { background: var(--warn-soft); border-left: 4px solid var(--warn); }
+  .box.tip  { background: var(--ok-soft);   border-left: 4px solid var(--ok); }
+  .box.info { background: var(--info-soft); border-left: 4px solid var(--info); }
+  .box strong:first-child { display: block; margin-bottom: 2px; }
+  kbd {
+    display: inline-block; font-family: inherit; font-size: .85em; font-weight: 600;
+    border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 6px;
+    padding: 0 6px; background: var(--bg); white-space: nowrap;
+  }
+  kbd.go { background: var(--accent); color: #fff; border-color: var(--accent); }
+  kbd.knob { background: #3b4048; color: #fff; border-color: #3b4048; border-radius: 999px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 10px 0 14px; }
+  .chip { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: var(--bg); }
+  .chip b { display: block; }
+  .chip small { color: var(--muted); }
+  .muted { color: var(--muted); font-size: .88rem; }
+  footer { text-align: center; color: var(--muted); font-size: .82rem; padding: 10px 16px 40px; }
+  footer a, section a { color: var(--accent); }
+  .quick ol li { margin: 6px 0; }
+  .panel {
+    background: #111; color: #eee; border-radius: 12px; padding: 14px; margin: 10px 0 14px;
+    display: grid; grid-template-columns: 1.2fr 3fr 1fr; gap: 10px; align-items: center; font-size: .78rem;
+  }
+  .panel .knob {
+    width: 84px; height: 84px; border-radius: 50%; margin: 0 auto;
+    background: radial-gradient(circle at 35% 35%, #d9dde2, #8a9099); color: #222;
+    display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: .72rem;
+  }
+  .panel .screen { background: #000; border-radius: 8px; padding: 8px; }
+  .panel .digits { color: #4ea3ff; font-size: 1.4rem; text-align: center; letter-spacing: .1em; font-family: monospace; margin-bottom: 6px; }
+  .panel .keys { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+  .panel .keys div { background: #222; border-radius: 6px; padding: 6px 2px; }
+  .panel .keys .start { background: #c4161c; color: #fff; font-weight: 700; }
+  .panel .lbl { display: block; color: #aaa; font-size: .64rem; line-height: 1.3; }
+  .panel .cap { text-align: center; color: #aaa; font-size: .7rem; margin-top: 4px; }
+  @media (max-width: 560px) {
+    .panel { grid-template-columns: 1fr 1fr; }
+    .panel .screen { grid-column: 1 / -1; order: 3; }
+    .panel .keys { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="tag">嵌入式微波蒸烤爐</span>
+  <h1>BOSCH 6系列 精巧型微波蒸烤爐</h1>
+  <p>型號 CPA565GS1N（台灣版，36L，220V）・中文速查手冊</p>
+</header>
+
+<nav class="toc">
+  <a href="#quick">⚡ 30 秒速查</a>
+  <a href="#first">首次使用</a>
+  <a href="#parts">面板與配件</a>
+  <a href="#modes">功能總覽</a>
+  <a href="#mw">微波</a>
+  <a href="#steam">蒸氣</a>
+  <a href="#oven">烤箱/燒烤</a>
+  <a href="#combi">組合模式</a>
+  <a href="#best">★ 台灣常用菜</a>
+  <a href="#auto">30 種自動程式</a>
+  <a href="#time">計時/童鎖/設定</a>
+  <a href="#clean">清潔</a>
+  <a href="#descale">除鈣</a>
+  <a href="#trouble">故障排除</a>
+  <a href="#spec">規格</a>
+</nav>
+
+<main>
+
+<!-- 速查 -->
+<section id="quick" class="quick">
+  <h2><span class="num">⚡</span>30 秒速查：最常用的操作</h2>
+  <p class="muted">本機操作邏輯：<b>左旋鈕選功能</b> → <b>右旋鈕調數值</b>（溫度／時間／重量）→ 按 <kbd class="go">start / stop</kbd>。左旋鈕轉回最上面「0」＝關機。</p>
+  <div class="table-wrap">
+  <table>
+    <tr><th>我要…</th><th>怎麼做</th></tr>
+    <tr><td>微波加熱剩菜</td><td>左旋鈕轉到 <kbd class="knob">〰 微波</kbd> → 一直按 <kbd>〰</kbd> 鍵選瓦數（建議 <b>600W</b>）→ 右旋鈕調時間 → <kbd class="go">start</kbd></td></tr>
+    <tr><td>熱一杯牛奶/飲料</td><td>微波 <b>1000W</b>、200 ml 約 <b>1～2 分</b>；杯裡放一支湯匙防突沸</td></tr>
+    <tr><td>蒸魚、蒸菜、蒸包子</td><td>水箱加水到 MAX → 左旋鈕轉到 <kbd class="knob">♨ 蒸氣</kbd> → 按 <kbd>♨</kbd> 鍵選蒸氣強度（1～3）→ 右旋鈕調時間 → <kbd class="go">start</kbd>。<br>玻璃烤盤放<b>第 3 層</b>，上面放蒸盤</td></tr>
+    <tr><td>烤箱烤東西</td><td>左旋鈕轉到 <kbd class="knob">熱風</kbd> → 右旋鈕調溫度（100～230°C）→ <kbd class="go">start</kbd>；要快速預熱，先短按 <kbd>快速預熱</kbd> 再 start</td></tr>
+    <tr><td>烤吐司、烤肉片</td><td>左旋鈕轉到 <kbd class="knob">上火燒烤</kbd> → 右旋鈕選段數 1～3 → 設時間 → <kbd class="go">start</kbd>；食物放烤架第 3 層</td></tr>
+    <tr><td>用自動程式（不想自己設）</td><td>左旋鈕轉到 <kbd class="knob">🍴 程式</kbd> → 右旋鈕選菜色編號 → 按 <kbd>🍴</kbd> 切到重量 → 右旋鈕設重量 → <kbd class="go">start</kbd>（<a href="#auto">程式列表</a>）</td></tr>
+    <tr><td>設定烹調時間（自動關火）</td><td>選好功能後，按 <kbd>⏱</kbd> 直到「烹調時間」亮 → 右旋鈕調時間 → <kbd class="go">start</kbd></td></tr>
+    <tr><td>廚房計時器（不影響爐子）</td><td>按一下 <kbd>⏱</kbd> → 右旋鈕設時間，幾秒後自動開始</td></tr>
+    <tr><td>中途暫停 / 翻面</td><td>按 <kbd class="go">stop</kbd> 或直接開門；關門後再按 <kbd class="go">start</kbd> 繼續</td></tr>
+    <tr><td>結束 / 關機</td><td>左旋鈕轉回最上面 <b>0</b></td></tr>
+    <tr><td>蒸完後清洗管路（建議每次）</td><td>左旋鈕轉到 <kbd class="knob">沖洗</kbd> → 清空集水盒、水箱換新水 → <kbd class="go">start</kbd></td></tr>
+    <tr><td>童鎖</td><td>關機狀態下<b>長按約 4 秒</b> <kbd>快速預熱</kbd> 鍵（顯示鎖頭）；再長按 4 秒解除</td></tr>
+  </table>
+  </div>
+  <div class="box warn"><strong>⚠ 最重要的三條</strong>
+    <ul>
+      <li><b>微波模式絕不能空機啟動</b>（裡面一定要有食物），也<b>不能放金屬容器、金蔥/金邊餐具</b>。</li>
+      <li>用蒸氣功能前，<b>水箱一定要加水</b>；連續缺水啟動會出現 E5005。</li>
+      <li>開門時小心<b>熱蒸氣</b>（溫度高時蒸氣看不見）；拿取配件一定要戴隔熱手套。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 首次使用 -->
+<section id="first">
+  <h2><span class="num">1</span>第一次使用前要做的事</h2>
+  <ol>
+    <li><b>撕掉保護膜、清空爐內</b>：取出所有包材與配件，爐內不要留任何東西。</li>
+    <li><b>設定時鐘</b>：第一次通電時時間會閃爍 → 右旋鈕調時間 → 按 <kbd>⏱</kbd> 確認。</li>
+    <li><b>設定水質硬度</b>（影響除鈣提醒頻率）：關機狀態下<b>長按 <kbd>⏱</kbd> 數秒</b>進入基本設定 → 重複按 <kbd>⏱</kbd> 切到「水質硬度」→ 右旋鈕選 0～4 → 再長按數秒儲存（<a href="#settings">見設定表</a>）。</li>
+    <li><b>空燒去味</b>：用濕軟布擦拭爐腔 → 關門、廚房開窗通風 → 左旋鈕轉到 <kbd class="knob">熱風</kbd> → 右旋鈕調 <b>180°C</b> → <kbd class="go">start</kbd> → <b>1 小時</b>後轉回 0，等冷卻。</li>
+    <li><b>清洗配件</b>：烤架、玻璃烤盤、蒸盤用中性洗碗精＋軟布洗淨。</li>
+    <li><b>第一次用蒸氣前</b>：建議先跑一次 <a href="#rinse">沖洗程序</a>，把管路沖乾淨。</li>
+  </ol>
+  <div class="box tip"><strong>💡 實用建議（非原廠手冊內容）</strong>
+    <ul>
+      <li>台灣自來水多為中硬水，若不確定可先設 <b>3（硬）</b>；家裡有軟水機或用 RO/過濾水可設 1～2。</li>
+      <li>空燒時會有新機味和少量白煙，屬正常。</li>
+      <li>手冊封面的貼紙（自動程式編號表）可以貼在機身旁，選程式時比較方便。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 面板 -->
+<section id="parts">
+  <h2><span class="num">2</span>控制面板、水箱與配件</h2>
+  <div class="panel">
+    <div><div class="knob">功能<br>旋鈕</div><div class="cap">左：選功能</div></div>
+    <div class="screen">
+      <div class="digits">11:19</div>
+      <div class="keys">
+        <div>〰<span class="lbl">微波<br>瓦數</span></div>
+        <div>♨<span class="lbl">蒸氣<br>強度</span></div>
+        <div>🍴<span class="lbl">自動<br>程式</span></div>
+        <div>⏱<span class="lbl">時間<br>設定</span></div>
+        <div>⇡<span class="lbl">快速預熱<br>/童鎖</span></div>
+        <div>🌡<span class="lbl">溫度<br>/kg</span></div>
+        <div class="start">▷<span class="lbl" style="color:#fff">start<br>stop</span></div>
+      </div>
+    </div>
+    <div><div class="knob">− ＋</div><div class="cap">右：調數值</div></div>
+  </div>
+
+  <h3>左旋鈕（功能選擇）的位置</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>圖示</th><th>功能</th><th>用途</th></tr>
+    <tr><td><b>0</b>（最上方）</td><td>關機</td><td>關機／省電待機，螢幕顯示時鐘</td></tr>
+    <tr><td>〰〰</td><td><b>微波</b></td><td>加熱、解凍、快速烹調</td></tr>
+    <tr><td>♨</td><td><b>蒸氣</b></td><td>熱蒸氣送入爐內，蒸魚、蒸菜、蒸點心</td></tr>
+    <tr><td>風扇</td><td><b>熱風</b>（3D 熱風）</td><td>後方環形加熱管＋風扇，烘焙、烤肉；另有 40°C 發酵</td></tr>
+    <tr><td>上方鋸齒</td><td><b>全面燒烤</b>（上火）</td><td>上方整面加熱，烤吐司、焗烤、香腸</td></tr>
+    <tr><td>鋸齒＋風扇</td><td><b>熱風燒烤</b></td><td>上火＋風扇，烤全雞、整條魚、大塊肉</td></tr>
+    <tr><td>🍴</td><td><b>自動程式</b></td><td>30 種內建菜單，輸入重量自動設定</td></tr>
+    <tr><td>水滴/鈣</td><td><b>除鈣</b></td><td>清除蒸氣產生器水垢（約 32 分）</td></tr>
+    <tr><td>水流</td><td><b>沖洗</b></td><td>用清水沖洗蒸氣管路，建議每次蒸完都做</td></tr>
+  </table>
+  </div>
+  <p class="muted">實際位置與圖示以機身旋鈕旁的符號為準。從 0 轉到某個功能後，需要等幾秒才會啟用。</p>
+
+  <h3>觸控鍵</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>鍵</th><th>用途</th></tr>
+    <tr><td><kbd>〰</kbd> 微波</td><td>選微波瓦數；在蒸氣或燒烤模式下按，可「加開微波」變組合模式。重複按＝由高到低切換</td></tr>
+    <tr><td><kbd>♨</kbd> 蒸氣</td><td>選蒸氣強度 1～3；在熱風/燒烤/微波模式下按，可「加蒸氣」</td></tr>
+    <tr><td><kbd>🍴</kbd> 程式</td><td>自動程式中切換「菜色編號 ↔ 重量」；長按 4 秒重設菜色</td></tr>
+    <tr><td><kbd>⏱</kbd> 時間</td><td>按 1 下＝計時器、按 2 下＝烹調時間、關機時按 2 下＝改時鐘；關機時長按＝基本設定</td></tr>
+    <tr><td><kbd>⇡</kbd> 快速預熱/童鎖</td><td>短按＝快速預熱開/關；關機時長按約 4 秒＝童鎖</td></tr>
+    <tr><td><kbd>🌡/kg</kbd></td><td>切換到溫度或重量，再用右旋鈕調整</td></tr>
+    <tr><td><kbd class="go">start / stop</kbd></td><td>開始／暫停</td></tr>
+  </table>
+  </div>
+
+  <h3>螢幕上的提示</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>符號</th><th>狀態</th><th>意思／處理</th></tr>
+    <tr><td rowspan="3">水箱</td><td>亮＋箭頭閃</td><td>水箱沒水 → 加水到 MAX</td></tr>
+    <tr><td>符號閃、箭頭不閃</td><td>水箱沒插好 → 推到底</td></tr>
+    <tr><td>亮、箭頭不亮</td><td>正常</td></tr>
+    <tr><td rowspan="2">集水盒</td><td>亮＋箭頭閃</td><td>集水盒滿了 → 倒掉</td></tr>
+    <tr><td>符號閃、箭頭不閃</td><td>集水盒沒插好</td></tr>
+    <tr><td>除鈣</td><td>亮</td><td>需要除鈣（剩 5 次以內蒸氣操作）</td></tr>
+    <tr><td>快速預熱</td><td>亮</td><td>快速預熱中，完成會嗶一聲並熄滅</td></tr>
+    <tr><td>鎖頭</td><td>亮</td><td>童鎖啟動中</td></tr>
+    <tr><td>下方紅色進度條</td><td>由左往右變紅</td><td>升溫進度；<b>5 格全紅＝預熱完成</b>，可放食物</td></tr>
+  </table>
+  </div>
+  <p class="muted">晚上 22:00～05:59 面板會自動調暗（夜間模式），屬正常。</p>
+
+  <h3>水箱與集水盒</h3>
+  <div class="grid">
+    <div class="chip"><b>水箱蓋</b><small>在爐門正下方，按中間就會彈開</small></div>
+    <div class="chip"><b>水箱（右邊）</b><small>0.8 L，加冷水到 MAX，蒸氣用</small></div>
+    <div class="chip"><b>集水盒（左邊）</b><small>只在沖洗、除鈣時接水；平常蒸東西不會有水</small></div>
+  </div>
+
+  <h3>隨附配件</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>配件</th><th>用途</th><th>微波可用？</th></tr>
+    <tr><td><b>烤架</b></td><td>烘焙、燒烤（牛排、香腸、吐司），或放淺烤盤</td><td>組合模式可，純微波不建議</td></tr>
+    <tr><td><b>玻璃烤盤</b></td><td>烹調、燒烤時接油；蒸氣時當底盤</td><td>✅ 可</td></tr>
+    <tr><td><b>蒸盤（蒸煮容器）</b></td><td>蒸飯、馬鈴薯、蔬菜、魚；放在玻璃烤盤裡</td><td>✅ 可（蒸氣＋微波）</td></tr>
+  </table>
+  </div>
+  <div class="box info"><strong>層架位置</strong>爐內有 <b>4 層</b>，由下往上數 1～4；<b>爐底＝第 0 層</b>。
+    <ul>
+      <li><b>純微波</b>：容器直接放<b>爐底（第 0 層）</b>，微波效果最好。</li>
+      <li><b>蒸氣</b>：拿掉烤架，<b>玻璃烤盤放第 3 層</b>，蒸盤放在玻璃烤盤上。</li>
+      <li><b>燒烤</b>：烤架放第 3 層，玻璃烤盤放第 1 層接油。</li>
+      <li><b>烘焙</b>：一般放第 1～2 層。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 功能總覽 -->
+<section id="modes">
+  <h2><span class="num">3</span>功能總覽：什麼時候用哪個</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>功能</th><th>可調範圍</th><th>最適合</th></tr>
+    <tr><td><b>微波</b></td><td>90 / 180 / 360 / 600 / 1000 W</td><td>加熱剩菜、熱飲、解凍</td></tr>
+    <tr><td><b>蒸氣</b></td><td>強度 1 / 2 / 3（預設 3、20 分）</td><td>蒸魚、蒸蛋、蒸包子饅頭、蔬菜、地瓜</td></tr>
+    <tr><td><b>熱風</b></td><td>40°C（發酵）、100～230°C</td><td>蛋糕、餅乾、披薩、薯條、烤肉</td></tr>
+    <tr><td><b>全面燒烤</b></td><td>段數 1 低 / 2 中 / 3 高</td><td>1：深盤焗烤、舒芙蕾　2：淺盤焗烤、魚　3：香腸、吐司</td></tr>
+    <tr><td><b>熱風燒烤</b></td><td>100～190°C</td><td>全雞、整條魚、大塊肉</td></tr>
+    <tr><td><b>微波組合（MicroCombi）</b></td><td>熱風/燒烤/蒸氣 ＋ 微波（1000W 除外）</td><td>縮短烤肉、焗烤時間</td></tr>
+    <tr><td><b>加蒸氣組合</b></td><td>熱風/燒烤/微波 ＋ 蒸氣</td><td>麵包外酥內軟、肉類多汁、加熱便當不乾</td></tr>
+  </table>
+  </div>
+  <h3>微波瓦數怎麼選</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>瓦數</th><th>用途</th></tr>
+    <tr><td><b>90 W</b></td><td>解凍嬌貴食物（奶油、蛋糕）</td></tr>
+    <tr><td><b>180 W</b></td><td>解凍＋續煮、一般解凍</td></tr>
+    <tr><td><b>360 W</b></td><td>煮肉、魚；加熱嬌貴食物、嬰兒奶瓶</td></tr>
+    <tr><td><b>600 W</b></td><td>加熱、烹調（最常用）</td></tr>
+    <tr><td><b>1000 W</b></td><td>加熱液體（飲料、湯）</td></tr>
+  </table>
+  </div>
+  <p class="muted">1000W 開始的前幾分鐘會自動降到 600W 保護機器，冷卻後再恢復，屬正常。</p>
+</section>
+
+<!-- 微波 -->
+<section id="mw">
+  <h2><span class="num">4</span>微波操作</h2>
+  <ol>
+    <li>食物放在<b>微波可用容器</b>（玻璃、陶瓷、耐熱塑膠），直接放<b>爐底</b>。</li>
+    <li>左旋鈕轉到 <kbd class="knob">〰 微波</kbd>，螢幕預設顯示最高瓦數。</li>
+    <li>重複按 <kbd>〰</kbd> 選瓦數，螢幕出現建議時間。</li>
+    <li>右旋鈕調時間 → <kbd class="go">start</kbd>。過程中也可以轉右旋鈕改時間。</li>
+    <li>時間到會嗶聲、自動停止；轉回 0 關機。</li>
+  </ol>
+  <div class="table-wrap">
+  <table>
+    <tr><th>時間範圍</th><th>右旋鈕每格</th></tr>
+    <tr><td>0～1 分</td><td>5 秒</td></tr>
+    <tr><td>1～3 分</td><td>10 秒</td></tr>
+    <tr><td>3～15 分</td><td>30 秒</td></tr>
+    <tr><td>15 分～1 小時</td><td>1 分</td></tr>
+    <tr><td>1 小時～1.5 小時</td><td>5 分</td></tr>
+  </table>
+  </div>
+  <h3>容器可不可以用</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>✅ 可以</th><th>❌ 不行</th></tr>
+    <tr><td>耐熱玻璃、玻璃陶瓷、瓷器、耐熱塑膠、全上釉無裂痕陶器</td><td>金屬鍋具、鋁箔容器、有金邊/銀邊裝飾的碗盤</td></tr>
+  </table>
+  </div>
+  <div class="box info"><strong>不確定容器能不能微波？</strong>空容器放進去，開最高瓦數 30 秒～1 分鐘：摸起來冷或微溫＝可用；變很燙或冒火花＝不可用。（這是唯一可以「沒放食物」開微波的情況。）</div>
+  <div class="box warn"><strong>⚠ 注意</strong>
+    <ul>
+      <li>加熱液體要<b>放一支湯匙</b>防止突沸；湯匙要離爐壁和門<b>至少 2 cm</b>，否則會冒火花。</li>
+      <li>雞蛋（帶殼或整顆水煮蛋）不要用微波加熱，會爆。</li>
+      <li>加熱嬰兒奶瓶要拿掉奶嘴和蓋子，360W 約 0.5～1.5 分，搖勻後一定要試溫。</li>
+    </ul>
+  </div>
+  <h3>解凍參考（原廠建議）</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>食物</th><th>設定</th><th>備註</th></tr>
+    <tr><td>肉片/肉塊 500 g</td><td>180W 10 分 → 90W 5～10 分</td><td>翻面時把肉片分開</td></tr>
+    <tr><td>絞肉 500 g</td><td>180W 5 分 → 90W 10～15 分</td><td>冷凍時壓平；已解凍部分先拿出</td></tr>
+    <tr><td>雞肉塊 600 g</td><td>180W 5 分 → 90W 10～15 分</td><td>倒掉解凍出來的血水</td></tr>
+    <tr><td>魚片 400 g</td><td>180W 5 分 → 90W 10～15 分</td><td></td></tr>
+    <tr><td>麵包 500 g</td><td>180W 3 分 → 90W 10～15 分</td><td></td></tr>
+    <tr><td>奶油 125 g</td><td>90W 6～8 分</td><td>拆掉包裝</td></tr>
+  </table>
+  </div>
+  <p class="muted">解凍時容器不加蓋、放爐底，中途翻面 1～2 次；解凍後室溫靜置 10～60 分讓溫度均勻。</p>
+</section>
+
+<!-- 蒸氣 -->
+<section id="steam">
+  <h2><span class="num">5</span>蒸氣操作</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>強度</th><th>適合</th></tr>
+    <tr><td><b>1（低）</b></td><td>解凍蔬菜、肉、魚、水果</td></tr>
+    <tr><td><b>2（中）</b></td><td>甜點（布丁、蒸蛋）、魚、香腸、包子饅頭</td></tr>
+    <tr><td><b>3（高）</b></td><td>蔬菜、魚、配菜、川燙、蒸水果取汁</td></tr>
+  </table>
+  </div>
+  <ol>
+    <li><b>拿掉烤架</b>，玻璃烤盤放<b>第 3 層</b>，蒸盤放進玻璃烤盤，食物放蒸盤上。</li>
+    <li>左旋鈕轉到 <kbd class="knob">♨ 蒸氣</kbd>，預設強度 3、20 分，水箱箭頭會閃。</li>
+    <li>按水箱蓋中間打開 → 取出水箱 → 加<b>冷水</b>到 <b>MAX</b> → 推到底 → 蓋上。</li>
+    <li>按 <kbd>♨</kbd> 選強度、右旋鈕調時間 → <kbd class="go">start</kbd>。</li>
+    <li>時間到會嗶聲。<b>小心開門</b>，讓蒸氣先散一下。</li>
+    <li>蒸完：擦乾爐腔底部的<b>集水槽</b>和爐內水氣，建議跑一次<a href="#rinse">沖洗</a>，再倒空、擦乾水箱。</li>
+  </ol>
+  <div class="box info"><strong>一箱水可以用多久</strong>
+    <ul>
+      <li>純蒸氣（強度 3）：約 <b>30～40 分</b>；強度低更久。中途沒水會暫停、水箱箭頭閃，加水後按 start 繼續。</li>
+      <li>蒸氣＋微波：約 50 分，沒水會暫停。</li>
+      <li>燒烤＋蒸氣：約 3 小時；沒水會<b>繼續烤但不加蒸氣</b>，不會提示。</li>
+    </ul>
+  </div>
+  <div class="box warn"><strong>⚠ 注意</strong>
+    <ul>
+      <li>水箱只能加<b>水</b>（或原廠除鈣液），<b>不可加酒精</b>等易燃液體。</li>
+      <li>運作時水箱會變熱，等冷卻再拿。水箱和集水盒<b>不可放洗碗機</b>。</li>
+      <li>運轉時有「嗡嗡」聲是幫浦正常聲音。很久沒用蒸氣，先跑一次沖洗。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 烤箱 -->
+<section id="oven">
+  <h2><span class="num">6</span>烤箱（熱風）與燒烤</h2>
+  <h3>熱風 / 熱風燒烤</h3>
+  <ol>
+    <li>左旋鈕轉到 <kbd class="knob">熱風</kbd> 或 <kbd class="knob">熱風燒烤</kbd>，螢幕顯示預設溫度。</li>
+    <li>右旋鈕調溫度；需要時按 <kbd>⏱</kbd> 兩下設烹調時間。</li>
+    <li>（建議）短按 <kbd>⇡</kbd> 開<b>快速預熱</b>（溫度 100°C 以上才有，最多 15 分自動結束）。</li>
+    <li><kbd class="go">start</kbd>。下方紅條 <b>5 格全紅</b>或快速預熱嗶聲後，再放食物。</li>
+  </ol>
+  <div class="box tip"><strong>💡 發酵麵團</strong>麵團放碗裡蓋保鮮膜，放爐底 → 熱風選 <b>40°C</b>（40°C 無快速預熱，也不能在運轉中改成 40°C）。</div>
+
+  <h3>全面燒烤（上火）</h3>
+  <ol>
+    <li>左旋鈕轉到 <kbd class="knob">燒烤</kbd> → 右旋鈕選段數 1～3。</li>
+    <li>設時間 → <kbd class="go">start</kbd>。燒烤時紅條會整條亮。</li>
+    <li>食物直接放<b>烤架（第 3 層）</b>，玻璃烤盤放<b>第 1 層</b>接油；<b>關門燒烤</b>。</li>
+  </ol>
+  <p class="muted">燒烤時加熱管會一亮一滅、可能有少量煙，都是正常的。肉烤好再撒鹽比較多汁；用夾子翻面，不要用叉子戳。</p>
+</section>
+
+<!-- 組合 -->
+<section id="combi">
+  <h2><span class="num">7</span>組合模式（微波＋烤、蒸氣＋烤）</h2>
+  <p>這台最強的地方：<b>烤的時候加微波＝更快熟</b>、<b>烤的時候加蒸氣＝外酥內嫩不乾</b>。</p>
+  <h3>加微波（MicroCombi）</h3>
+  <ol>
+    <li>左旋鈕轉到熱風 / 燒烤 / 熱風燒烤 / 蒸氣，右旋鈕調溫度或段數。</li>
+    <li>按 <kbd>〰</kbd> 選微波瓦數（不能用 1000W）→ 右旋鈕設時間 → <kbd class="go">start</kbd>。</li>
+  </ol>
+  <h3>加蒸氣</h3>
+  <ol>
+    <li>左旋鈕轉到熱風 / 燒烤 / 熱風燒烤 / 微波，調好溫度或瓦數。</li>
+    <li>按 <kbd>♨</kbd> 選強度（再按到最低之後會關掉蒸氣），水箱圖示出現 → 加水。</li>
+    <li><kbd class="go">start</kbd>。過程中<b>盡量不要開門</b>，會影響效果。</li>
+  </ol>
+  <div class="box info"><strong>限制</strong>微波 1000W、熱風 40°C 不能組合。組合模式請用<b>耐熱又可微波</b>的容器；組合模式下可以用一般金屬烤模，但若烤模與烤架之間冒火花，換位置或改成不加微波。</div>
+</section>
+
+<!-- 台灣常用菜 -->
+<section id="best">
+  <h2><span class="num">★</span>台灣家庭常用菜：建議設定</h2>
+  <div class="box info"><strong>看表方式</strong>層架：0＝爐底、3＝第 3 層。蒸的東西一律「玻璃烤盤＋蒸盤」放第 3 層、水箱加滿。標 <b>原廠</b> 的是手冊建議值；標 <b>建議</b> 的是一般使用經驗，請依份量微調。</div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>菜色</th><th>功能與設定</th><th>時間</th><th>來源</th></tr>
+    <tr><td><b>熱剩菜／便當（冷藏）</b></td><td>微波 600W，加蓋放爐底，中途攪拌</td><td>3～5 分</td><td>建議</td></tr>
+    <tr><td><b>熱便當不乾版</b></td><td>蒸氣 3 ＋ 微波 360W，不加蓋放第 3 層</td><td>9～14 分（冷凍 400 g）</td><td>原廠</td></tr>
+    <tr><td><b>熱湯 2 碗</b></td><td>微波 600W</td><td>3～4 分</td><td>原廠</td></tr>
+    <tr><td><b>熱飲／牛奶 200 ml</b></td><td>微波 1000W，杯中放湯匙</td><td>1～2 分</td><td>原廠</td></tr>
+    <tr><td><b>清蒸魚片 400 g</b></td><td>蒸氣 3</td><td>15～17 分</td><td>原廠</td></tr>
+    <tr><td><b>清蒸整條魚 300 g</b></td><td>蒸氣 3，魚肚淋檸檬汁/薑絲</td><td>18～22 分</td><td>原廠</td></tr>
+    <tr><td><b>冷凍包子／饅頭</b></td><td>蒸氣 2，不用退冰</td><td>20～25 分</td><td>原廠（蒸酵母點心）</td></tr>
+    <tr><td><b>蒸蛋／茶碗蒸</b></td><td>蒸氣 2，碗蓋盤子或耐熱保鮮膜</td><td>12～15 分</td><td>建議</td></tr>
+    <tr><td><b>布丁（焦糖布丁）</b></td><td>蒸氣 3，小烤皿放玻璃烤盤</td><td>40～50 分</td><td>原廠</td></tr>
+    <tr><td><b>蒸地瓜／馬鈴薯塊 500 g</b></td><td>蒸氣 3</td><td>30～32 分（整條地瓜 40～50）</td><td>原廠／建議</td></tr>
+    <tr><td><b>玉米 2 根</b></td><td>蒸氣 3</td><td>25～35 分</td><td>原廠</td></tr>
+    <tr><td><b>青花菜 500 g</b></td><td>蒸氣 3</td><td>20～23 分（小朵冷凍 14～16）</td><td>原廠</td></tr>
+    <tr><td><b>菠菜／青菜 250 g</b></td><td>蒸氣 3</td><td>5～7 分</td><td>原廠</td></tr>
+    <tr><td><b>微波煮白飯</b></td><td>米 125 g＋水 300 ml，深碗加蓋放爐底：600W → 180W</td><td>4～6 分 → 12～15 分，燜 5～10 分</td><td>原廠</td></tr>
+    <tr><td><b>烤雞腿／雞肉塊 800 g</b></td><td>熱風燒烤 190°C ＋ 微波 180W，皮朝上放爐底</td><td>20～35 分</td><td>原廠</td></tr>
+    <tr><td><b>烤全雞 1.3 kg</b></td><td>熱風燒烤 190°C ＋ 微波 360W ＋ 蒸氣 3，胸朝上</td><td>40～45 分，靜置 5 分</td><td>原廠</td></tr>
+    <tr><td><b>牛排 2～3 cm</b></td><td>燒烤 3，烤架第 3 層、玻璃盤第 1 層</td><td>10～15 分 → 翻面 5～10 分</td><td>原廠</td></tr>
+    <tr><td><b>香腸 4～6 條</b></td><td>燒烤 3，同上</td><td>10～15 分 → 翻面 5～10 分</td><td>原廠</td></tr>
+    <tr><td><b>烤吐司</b></td><td>燒烤 3，烤架第 3 層</td><td>3～6 分</td><td>原廠</td></tr>
+    <tr><td><b>冷凍薯條／雞塊</b></td><td>熱風 190～210°C，玻璃烤盤第 2 層，平鋪一層</td><td>25～40 分</td><td>原廠</td></tr>
+    <tr><td><b>手作披薩</b></td><td>熱風 210～230°C，玻璃烤盤第 2 層</td><td>25～35 分</td><td>原廠</td></tr>
+    <tr><td><b>冷凍披薩（已烤過）</b></td><td>熱風 180～190°C ＋ 微波 180W，烤架第 2 層</td><td>8～15 分</td><td>原廠</td></tr>
+    <tr><td><b>焗烤馬鈴薯</b></td><td>熱風 170～180°C ＋ 微波 600W，爐底</td><td>20～30 分</td><td>原廠</td></tr>
+    <tr><td><b>焗烤義大利麵／千層麵（熟料）</b></td><td>熱風 180～190°C ＋ 微波 600W，爐底</td><td>12～17 分</td><td>原廠</td></tr>
+    <tr><td><b>餅乾</b></td><td>熱風 150～170°C，玻璃烤盤第 2 層</td><td>20～35 分</td><td>原廠</td></tr>
+    <tr><td><b>磅蛋糕／戚風</b></td><td>熱風 160～170°C，第 1 層</td><td>60～80 分（戚風 40～50）</td><td>原廠</td></tr>
+    <tr><td><b>麵包捲</b></td><td>熱風 200～210°C ＋ 蒸氣 3，第 1 層</td><td>25～35 分</td><td>原廠</td></tr>
+    <tr><td><b>微波爆米花 100 g</b></td><td>微波 600W</td><td>3～5 分</td><td>原廠</td></tr>
+  </table>
+  </div>
+  <h3>🔧 結果不對時怎麼調</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>狀況</th><th>怎麼調</th></tr>
+    <tr><td>微波後外圍燙、中間冷</td><td>中途攪拌；下次改<b>低一階瓦數、拉長時間</b></td></tr>
+    <tr><td>微波後食物變乾</td><td>加蓋、加一點水，或縮短時間；改用「蒸氣＋微波」</td></tr>
+    <tr><td>份量變 2 倍</td><td>時間<b>接近 2 倍</b>；份量減半＝時間接近減半</td></tr>
+    <tr><td>烤的外面太焦、裡面沒熟</td><td>溫度降 10°C、時間拉長</td></tr>
+    <tr><td>烤的顏色太淡</td><td>確認層架；溫度調高或時間拉長</td></tr>
+    <tr><td>烤肉外皮不脆</td><td>提高溫度，或最後幾分鐘開燒烤</td></tr>
+  </table>
+  </div>
+  <div class="box tip"><strong>💡 除臭小技巧（原廠）</strong>杯中加水和幾滴檸檬汁、放一支湯匙，用最高微波 1～2 分，爐內異味會淡很多。</div>
+</section>
+
+<!-- 自動程式 -->
+<section id="auto">
+  <h2><span class="num">8</span>30 種自動程式</h2>
+  <ol>
+    <li>左旋鈕轉到 <kbd class="knob">🍴 程式</kbd>，螢幕顯示第一個菜色編號和預設重量。</li>
+    <li>右旋鈕選<b>菜色編號</b> → 按 <kbd>🍴</kbd> 切到重量 → 右旋鈕設<b>重量</b>（只能在範圍內）。</li>
+    <li><kbd class="go">start</kbd>，機器自動決定時間。開始後就<b>不能改菜色和重量</b>（要改：長按 <kbd>🍴</kbd> 4 秒或開門重設）。</li>
+    <li>中途嗶聲提示時，依指示<b>翻面或攪拌</b>，關門後按 start 繼續。</li>
+  </ol>
+  <div class="box info"><strong>使用前</strong>食物拆包裝秤重（無法精確就四捨五入）、肉用冷藏溫度、冷凍品直接從冷凍庫拿出、放進<b>冷的</b>爐子裡。標「需加水」的程式要先把水箱加滿。</div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>類別</th><th>菜色</th><th>配件／層架</th><th>重量 (kg)</th></tr>
+    <tr><td rowspan="4"><b>解凍</b></td><td>絞肉（牛、羊、豬）</td><td>淺盤不加蓋／0</td><td>0.10–1.20</td></tr>
+    <tr><td>魚片</td><td>淺盤不加蓋／0</td><td>0.10–1.00</td></tr>
+    <tr><td>帶骨雞肉塊</td><td>淺盤不加蓋／0（皮朝下）</td><td>0.15–1.20</td></tr>
+    <tr><td>麵包片</td><td>淺盤不加蓋／0</td><td>0.10–0.50</td></tr>
+    <tr><td rowspan="10"><b>禽肉、肉、魚</b></td><td>新鮮雞肉塊（雞腿、半雞）</td><td>烤架＋玻璃盤／3＋2（皮朝下）</td><td>0.15–1.00</td></tr>
+    <tr><td>沙朗 三分熟</td><td>玻璃盤／1</td><td>0.50–2.00</td></tr>
+    <tr><td>沙朗 五分熟</td><td>玻璃盤／1</td><td>0.50–2.00</td></tr>
+    <tr><td>沙朗 全熟</td><td>玻璃盤／1</td><td>0.50–2.00</td></tr>
+    <tr><td>帶骨羊腿 五分熟</td><td>玻璃盤／1</td><td>1.00–2.00</td></tr>
+    <tr><td>帶骨羊腿 全熟</td><td>玻璃盤／1</td><td>1.00–2.00</td></tr>
+    <tr><td>整條鮮魚 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.20–1.20</td></tr>
+    <tr><td>新鮮魚片 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.20–0.50</td></tr>
+    <tr><td>冷凍魚片 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.20–0.50</td></tr>
+    <tr><td>燉菜（生料）</td><td>加蓋容器／0（肉、菜、湯等量，輸入總重）</td><td>0.20–2.00</td></tr>
+    <tr><td rowspan="9"><b>蔬菜、配菜</b></td><td>新鮮青花菜 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.10–1.00</td></tr>
+    <tr><td>冷凍豌豆 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.10–1.00</td></tr>
+    <tr><td>紅蘿蔔片 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.10–0.75</td></tr>
+    <tr><td>綠蘆筍 💧</td><td>蒸盤＋玻璃盤／3（不要疊）</td><td>0.10–0.70</td></tr>
+    <tr><td>半熟蛋 💧</td><td>蒸盤＋玻璃盤／3（冷藏雞蛋）</td><td>2–10 顆</td></tr>
+    <tr><td>米飯</td><td>深碗加蓋／0（米:水＝1:2～3，長米）</td><td>0.10–0.50</td></tr>
+    <tr><td>烤馬鈴薯（帶皮）</td><td>烤架／2（約 250 g/顆，用叉子戳洞）</td><td>0.20–1.50</td></tr>
+    <tr><td>水煮馬鈴薯塊 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.20–0.50</td></tr>
+    <tr><td>糖煮水果 💧</td><td>蒸盤＋玻璃盤／3</td><td>0.30–0.80</td></tr>
+    <tr><td rowspan="7"><b>方便食品</b></td><td>冷凍薯條</td><td>玻璃盤／2（不要疊）</td><td>0.20–0.80</td></tr>
+    <tr><td>冷凍可樂餅</td><td>玻璃盤／2</td><td>0.25–0.80</td></tr>
+    <tr><td>冷藏預烤披薩（薄皮）</td><td>烤架／2</td><td>0.10–0.60</td></tr>
+    <tr><td>冷凍預烤披薩</td><td>烤架／1</td><td>0.10–0.50</td></tr>
+    <tr><td>冷藏焗烤麵（千層麵）</td><td>容器放玻璃盤／2</td><td>0.30–1.00</td></tr>
+    <tr><td>加熱冷藏餐盤</td><td>淺盤放玻璃盤／3</td><td>0.20–0.50</td></tr>
+    <tr><td>加熱冷凍餐盤</td><td>淺盤放玻璃盤／3</td><td>0.20–0.50</td></tr>
+  </table>
+  </div>
+  <p class="muted">💧＝需先把水箱加滿。表格依原廠手冊順序共 30 道，實際<b>程式編號以機身貼紙／中文手冊為準</b>。</p>
+</section>
+
+<!-- 時間/童鎖/設定 -->
+<section id="time">
+  <h2><span class="num">9</span>計時、童鎖與基本設定</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>功能</th><th>操作</th></tr>
+    <tr><td><b>廚房計時器</b></td><td>按 <kbd>⏱</kbd> 1 下 → 右旋鈕設時間 → 幾秒後自動開始（不影響爐子）。取消：右旋鈕轉到 00:00</td></tr>
+    <tr><td><b>烹調時間</b></td><td>選好功能後按 <kbd>⏱</kbd> 2 下 → 右旋鈕設時間 → start；時間到自動停止加熱並嗶聲</td></tr>
+    <tr><td><b>改時鐘</b></td><td>關機狀態按 <kbd>⏱</kbd> 2 下 → 右旋鈕調整 → 按 <kbd>⏱</kbd> 確認（不按幾秒後也會自動套用）</td></tr>
+    <tr><td><b>童鎖</b></td><td>關機狀態長按 <kbd>⇡</kbd> 約 4 秒；解除同樣長按 4 秒</td></tr>
+    <tr><td><b>安全自動關機</b></td><td>沒設烹調時間時，連續運轉 9 小時自動關機</td></tr>
+  </table>
+  </div>
+  <h3 id="settings">基本設定</h3>
+  <p>關機狀態下<b>長按 <kbd>⏱</kbd> 數秒</b> → 右旋鈕改數值 → 按 <kbd>⏱</kbd> 到下一項 → 全部改完<b>長按 <kbd>⏱</kbd> 數秒儲存</b>。中途轉左旋鈕＝放棄不存。</p>
+  <div class="table-wrap">
+  <table>
+    <tr><th>項目</th><th>選項（＊出廠值）</th></tr>
+    <tr><td>提示音長度</td><td>短 10 秒／中 30 秒＊／長 2 分</td></tr>
+    <tr><td>按鍵音</td><td>關／開＊</td></tr>
+    <tr><td>螢幕亮度</td><td>低／中＊／高</td></tr>
+    <tr><td>關機時顯示時鐘</td><td>關／開＊（關掉可省待機電）</td></tr>
+    <tr><td>爐內燈</td><td>關／開＊</td></tr>
+    <tr><td>水質硬度</td><td>0 軟化水／1 軟（≤1.3 mmol/l）／2 中（1.3–2.5）／3 硬（2.5–3.8）／4 很硬（&gt;3.8）＊<br><span class="muted">用礦泉水請設 4，且只能用無氣泡礦泉水</span></td></tr>
+    <tr><td>恢復出廠設定</td><td>關＊／開</td></tr>
+    <tr><td>展示模式</td><td>關＊／開（通電後 5 分鐘內才看得到）</td></tr>
+  </table>
+  </div>
+</section>
+
+<!-- 清潔 -->
+<section id="clean">
+  <h2><span class="num">10</span>日常清潔</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>時機</th><th>要做的事</th></tr>
+    <tr><td><b>每次用完</b></td><td>冷卻後擦掉爐內食物殘渣、水氣；蛋白、澱粉、油漬、水垢要馬上擦（不鏽鋼會留斑）</td></tr>
+    <tr><td><b>每次用蒸氣後</b></td><td>擦乾爐底<b>集水槽</b>（用海綿吸水）→ 跑<a href="#rinse">沖洗</a> → 倒空、擦乾水箱和集水盒 → 擦乾水箱槽</td></tr>
+    <tr><td><b>爐腔烘乾</b></td><td>手動：用海綿擦乾，開門 1 小時讓它乾透（原廠也提供加熱 15 分鐘烘乾的方式）</td></tr>
+    <tr><td><b>配件</b></td><td>溫肥皂水＋軟布或刷子；烤架可放洗碗機</td></tr>
+    <tr><td><b>水箱、集水盒</b></td><td>洗碗精＋軟布手洗、沖淨、擦乾、開蓋晾乾；<b>不可洗碗機、不可放熱爐內烘乾</b></td></tr>
+    <tr><td><b>水垢痕跡</b></td><td>布沾醋擦，再用清水擦、軟布擦乾</td></tr>
+  </table>
+  </div>
+  <h3>各部位怎麼清</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>部位</th><th>方法</th><th>不要用</th></tr>
+    <tr><td>不鏽鋼面板</td><td>熱肥皂水＋軟布，可上不鏽鋼保養劑</td><td>玻璃清潔劑、金屬刮刀</td></tr>
+    <tr><td>控制面板</td><td>超細纖維布或擰乾的軟布</td><td>濕答答的布</td></tr>
+    <tr><td>門玻璃</td><td>軟布＋玻璃清潔劑</td><td>玻璃刮刀、菜瓜布（會刮傷甚至裂）</td></tr>
+    <tr><td>門把</td><td>熱肥皂水；沾到除鈣液要馬上擦掉</td><td></td></tr>
+    <tr><td>門封條</td><td>熱肥皂水＋軟布</td><td>刮刀、研磨性清潔劑</td></tr>
+    <tr><td>爐腔</td><td>熱肥皂水或醋水；重油汙在<b>冷爐</b>時用烤箱清潔劑</td><td>烤箱噴劑、鋼刷</td></tr>
+    <tr><td>爐腔<b>後壁</b></td><td>觸媒自潔塗層，不用特別清；白色/褐色殘留用水＋軟海綿</td><td><b>烤箱清潔劑（會壞）</b>、用力刷</td></tr>
+    <tr><td>爐內蒸氣出口</td><td>熱肥皂水＋海綿或軟刷</td><td></td></tr>
+  </table>
+  </div>
+  <div class="box warn"><strong>⚠</strong>不可用蒸氣清洗機、高壓清洗機清這台機器（觸電危險）。後壁的紅色斑點是食物殘留，不是生鏽。</div>
+
+  <h3 id="rinse">沖洗程序（Rinse）</h3>
+  <ol>
+    <li>左旋鈕轉到 <kbd class="knob">沖洗</kbd>（時間固定，不能改）。</li>
+    <li>打開水箱蓋 → 取出<b>集水盒倒空</b>後推回。</li>
+    <li>水箱倒掉殘水、沖乾淨，加<b>新鮮清水</b>推回 → 蓋上水箱蓋。</li>
+    <li><kbd class="go">start</kbd>，機器把水打過管路排到集水盒，結束會嗶聲。</li>
+    <li>倒空、擦乾集水盒和水箱，左旋鈕轉回 0。</li>
+  </ol>
+  <p class="muted">集水盒裡有白色小顆粒＝被沖下來的水垢，正常。</p>
+</section>
+
+<!-- 除鈣 -->
+<section id="descale">
+  <h2><span class="num">11</span>除鈣（Descale）</h2>
+  <div class="box info"><strong>什麼時候要做</strong>
+    <ul>
+      <li>螢幕出現<b>除鈣符號</b>＝只剩 <b>5 次以內</b>的蒸氣操作。</li>
+      <li>不除鈣的話，<b>所有蒸氣功能會被鎖住</b>（微波、烤箱仍可用）。</li>
+      <li>頻率取決於水質硬度設定與蒸氣使用次數。</li>
+    </ul>
+  </div>
+  <h3>準備</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>除鈣劑（Bosch 原廠）</th><th>調配</th></tr>
+    <tr><td>液體除鈣劑（料號 00311680）</td><td>50 ml 除鈣劑 ＋ 250 ml 水（1:5）</td></tr>
+    <tr><td>除鈣錠（料號 00311864，18 g）</td><td>1 錠放入 250 ml 水，溶解 5 分鐘</td></tr>
+  </table>
+  </div>
+  <h3>步驟（總共約 32 分）</h3>
+  <ol>
+    <li>左旋鈕轉到 <kbd class="knob">除鈣</kbd>（時間固定約 31 分）。</li>
+    <li>打開水箱蓋 → 集水盒倒空推回。</li>
+    <li>取出水箱，倒入<b>除鈣溶液</b>，推到底 → 蓋上水箱蓋 → <kbd class="go">start</kbd>。</li>
+    <li>約 31 分後嗶聲、機器暫停。</li>
+    <li>打開水箱蓋 → <b>倒空集水盒</b>推回 → <b>水箱徹底沖洗、加清水</b>推回 → 蓋上。</li>
+    <li>按 <kbd class="go">start</kbd>，自動沖洗 2 次（約 1 分），結束嗶聲。</li>
+    <li>倒空、清洗、擦乾集水盒和水箱，左旋鈕轉回 0 完成。</li>
+  </ol>
+  <div class="box warn"><strong>⚠ 一定要跑完</strong>除鈣中途中斷，蒸氣功能會被鎖住，需再跑一次沖洗才能恢復。只用原廠建議的除鈣劑（醋、檸檬酸等可能損壞機器，作用時間也是依原廠產品設計的）。除鈣液沾到面板要馬上用水擦掉。</div>
+  <p class="muted">原廠除鈣劑可在 Bosch 台灣官方購物商城或客服購買，購買時報機器型號 CPA565GS1N。</p>
+</section>
+
+<!-- 故障排除 -->
+<section id="trouble">
+  <h2><span class="num">12</span>故障排除</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>問題</th><th>原因</th><th>處理</th></tr>
+    <tr><td rowspan="3">完全不動</td><td>沒通電</td><td>檢查電源、插頭</td></tr>
+    <tr><td>無熔絲開關跳掉</td><td>檢查電箱</td></tr>
+    <tr><td>停電</td><td>看廚房燈或其他電器是否正常</td></tr>
+    <tr><td>顯示錯誤訊息</td><td>故障</td><td>關掉電箱開關 → 約 10 秒後再開；仍出現就記下代碼找客服</td></tr>
+    <tr><td>顯示鎖頭、什麼都不能按</td><td>童鎖開著</td><td>長按 <kbd>⇡</kbd> 4 秒解除</td></tr>
+    <tr><td>12:00 閃爍</td><td>停電過</td><td>重設時鐘</td></tr>
+    <tr><td>有顯示時間但沒在運作</td><td>沒按 start</td><td>按 <kbd class="go">start</kbd></td></tr>
+    <tr><td>微波不動</td><td>門沒關緊／沒按 start</td><td>檢查門縫有無食物卡住，按 start</td></tr>
+    <tr><td>加熱比平常久</td><td>瓦數太低、份量太多、食物太冰</td><td>提高瓦數、拉長時間（份量 2 倍＝時間約 2 倍），中途翻攪</td></tr>
+    <tr><td>不加熱，冒號一直閃</td><td>展示模式開著</td><td>關電箱開關一下 → 3 分鐘內進基本設定把展示模式關掉</td></tr>
+    <tr><td>水箱和集水盒符號一直閃</td><td>沒插好或技術問題</td><td>兩個都推到底；還是閃就找客服（除了蒸氣，其他功能可照常用）</td></tr>
+    <tr><td>門上方冒熱氣</td><td>散熱風扇運作</td><td>正常</td></tr>
+    <tr><td>用完風扇還在轉 / 開門也在轉</td><td>機器在散熱</td><td>正常</td></tr>
+    <tr><td>熱風加蒸氣卻看不到蒸氣</td><td>溫度越高蒸氣越看不見</td><td>正常</td></tr>
+    <tr><td>蒸完集水盒是空的</td><td>平常的冷凝水在爐底玻璃盤和集水槽，不會進集水盒</td><td>正常；集水盒只用於沖洗、除鈣</td></tr>
+    <tr><td>組合模式水用得很少</td><td>三功能組合時蒸氣用量少</td><td>正常</td></tr>
+    <tr><td>門和面板有水珠</td><td>冷凝水</td><td>正常；預熱、慢慢開門可減少，用完擦乾</td></tr>
+    <tr><td><b>E0532</b></td><td>面板髒汙讓某個觸控鍵一直被觸發</td><td>關機 → 清潔面板 → 再開機；馬上再出現就找客服</td></tr>
+    <tr><td><b>E5005</b></td><td>水箱沒水卻多次啟動蒸氣</td><td>加滿冷水、水箱推到底再用；反覆出現找客服</td></tr>
+  </table>
+  </div>
+  <p class="muted">Bosch 台灣客服：<a href="https://www.bosch-home.com.tw/" target="_blank" rel="noopener">bosch-home.com.tw</a>（報修時提供機身標籤上的 E-Nr 型號與 FD 生產序號）。可在 <a href="https://www.bosch-home.com/welcome" target="_blank" rel="noopener">MyBosch</a> 註冊產品。</p>
+</section>
+
+<!-- 規格 -->
+<section id="spec">
+  <h2><span class="num">13</span>產品規格（台灣版 CPA565GS1N）</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>項目</th><th>規格</th></tr>
+    <tr><td>系列</td><td>Bosch 6 系列 精巧型嵌入式微波蒸烤爐（不鏽鋼、深邃黑門框）</td></tr>
+    <tr><td>容量</td><td>36 L</td></tr>
+    <tr><td>功能</td><td>微波、蒸氣、3D 熱風、全面燒烤、熱風燒烤；可組合使用</td></tr>
+    <tr><td>微波功率</td><td>5 段：90 / 180 / 360 / 600 / 1000 W</td></tr>
+    <tr><td>溫度範圍</td><td>40～230°C</td></tr>
+    <tr><td>蒸氣</td><td>3 段強度；可拆式水箱 0.8 L</td></tr>
+    <tr><td>自動程式</td><td>30 種</td></tr>
+    <tr><td>操作介面</td><td>雙旋鈕＋觸控鍵＋白色 LED 顯示</td></tr>
+    <tr><td>其他</td><td>快速預熱、童鎖、計時器、除鈣與沖洗程序、後壁觸媒自潔塗層</td></tr>
+    <tr><td>隨附配件</td><td>烤架 ×1、玻璃烤盤 ×1、蒸煮容器 ×1</td></tr>
+    <tr><td>機體尺寸（高×寬×深）</td><td>455 × 594 × 545 mm</td></tr>
+    <tr><td>爐腔尺寸</td><td>236 × 432 × 350 mm</td></tr>
+    <tr><td>安裝尺寸</td><td>高 450–452 × 寬 560–568 × 深 550 mm</td></tr>
+    <tr><td>淨重</td><td>33.9 kg</td></tr>
+    <tr><td>電源</td><td>220–240 V，台灣 220V T 型插頭，16 A；總功率 3,340 W</td></tr>
+    <tr><td>電線長度</td><td>120 cm</td></tr>
+    <tr><td>Home Connect</td><td>無</td></tr>
+    <tr><td>官方建議售價</td><td>NT$78,000（含標準安裝）</td></tr>
+  </table>
+  </div>
+  <div class="box warn"><strong>⚠ 電源</strong>本機為 <b>220V 專用</b>，需要專用 220V 迴路與 T 型插座，不可接 110V 或延長線。</div>
+</section>
+
+</main>
+
+<footer>
+  資料來源：
+  <a href="https://www.bosch-home.com.tw/zh/mkt-product/cooking-baking/ovens/built-in-oven-with-microwaves/CPA565GS1N" target="_blank" rel="noopener">Bosch 台灣官方產品頁 CPA565GS1N（規格）</a>・
+  <a href="https://media3.bosch-home.com/Documents/9001686063_C.pdf" target="_blank" rel="noopener">Bosch CPA565GS0B 原廠使用與安裝手冊（同平台英文版，PDF）</a>・
+  機身附 [zh-tw] 說明手冊
+  <br>操作步驟與建議值整理自原廠手冊；標示「建議／實用建議」者為一般使用經驗。如與機身附的中文手冊不同，以中文手冊為準。整理日期 2026-11-08。
+</footer>
+
+</body>
+</html>
