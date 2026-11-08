@@ -121,6 +121,9 @@
   .knobtable td:nth-child(2) { text-align: center; }
   .acc { display: inline-block; padding: 0 7px; border-radius: 6px; font-size: .8em; font-weight: 700; color: #fff; white-space: nowrap; margin-right: 3px; }
   .a-steam { background: #2b7a4b; } .a-rack { background: #5f6670; } .a-glass { background: #1d5fa8; } .a-floor { background: #8a5a14; }
+  ol.steps { margin: 0; padding-left: 1.2em; font-size: .9rem; }
+  ol.steps li { margin: 2px 0; }
+  table.reheat td:nth-child(4) { min-width: 260px; }
   .setup { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin: 10px 0 14px; }
   @media (max-width: 560px) {
     .dial { grid-template-columns: 1fr 84px 1fr; }
@@ -558,29 +561,41 @@
   </div>
 
   <div class="table-wrap">
-  <table>
-    <tr><th>食物</th><th>最適合的組合</th><th>配件擺法</th><th>時間</th><th>重點</th></tr>
-    <tr><td><b>冷掉的薯條</b></td><td><kbd class="knob">右3 熱風</kbd> <b>210°C</b>＋快速預熱<br><span class="muted">不加微波、不加蒸氣</span></td><td><span class="acc a-glass">盤</span>薯條直接平鋪在玻璃烤盤，第 2 層</td><td>預熱好放入 <b>6～8 分</b>，中途翻一次</td><td>薯條要的是「乾」，微波和蒸氣都會讓它變軟。量少可改 <kbd class="knob">左4 熱風燒烤</kbd> 190°C 5～7 分</td></tr>
-    <tr><td><b>速食漢堡</b><br><span class="muted">室溫／冷藏</span></td><td><kbd class="knob">右3 熱風</kbd> <b>180°C</b> ＋ 微波 <b>180W</b></td><td><span class="acc a-rack">烤</span>漢堡直接放烤架第 2 層，玻璃烤盤第 1 層接油</td><td>室溫 <b>4～5 分</b>／冷藏 <b>6～8 分</b></td><td><b>拆掉包裝紙（含鋁箔不可微波）</b>，先抽出生菜、番茄、酸黃瓜，烤完再放回</td></tr>
-    <tr><td><b>漢堡（講究版）</b></td><td>麵包、肉排分開：<br>肉排 熱風 180°C＋微波 360W<br>麵包 熱風 180°C</td><td><span class="acc a-rack">烤</span>肉排先上烤架，麵包剖半最後 2 分放上烤架</td><td>肉排 3～4 分；麵包最後放入 2 分</td><td>肉排熱透、麵包剛好酥，不會一邊乾一邊冷</td></tr>
-    <tr><td><b>歐式麵包／法棍／餐包</b></td><td><kbd class="knob">右3 熱風</kbd> <b>180°C</b> ＋ 蒸氣 <b>2</b> → 最後 2 分<b>關掉蒸氣</b></td><td><span class="acc a-rack">烤</span>麵包直接放烤架，玻璃烤盤第 1 層</td><td><b>6～8 分</b>（大顆 10 分）</td><td>蒸氣讓內部回軟、關蒸氣後外殼變脆。表面噴一點水效果更好</td></tr>
-    <tr><td><b>可頌／酥皮類</b></td><td><kbd class="knob">右3 熱風</kbd> <b>170°C</b><br><span class="muted">不加蒸氣</span></td><td><span class="acc a-rack">烤</span>可頌放烤架，玻璃烤盤第 1 層接酥皮屑</td><td><b>3～5 分</b></td><td>奶油多的酥皮靠乾熱就會酥，加蒸氣反而塌</td></tr>
-    <tr><td><b>吐司／切片麵包</b></td><td><kbd class="knob">右4 全面燒烤</kbd> 段數 <b>3</b></td><td><span class="acc a-rack">烤高</span>吐司直接放烤架第 3 層</td><td><b>3～5 分</b></td><td>邊烤邊看，很快會焦</td></tr>
-    <tr><td><b>饅頭／包子：軟 Q 版</b><br><span class="muted">冷藏</span></td><td><kbd class="knob">右2 蒸氣</kbd> 強度 <b>3</b> ＋ 微波 <b>360W</b></td><td><span class="acc a-steam">蒸</span>包子饅頭放黑色蒸盤（留間距），蒸盤放進玻璃烤盤，第 3 層</td><td><b>5～7 分</b>（冷凍 10～12 分）</td><td>比純蒸快一半，跟剛蒸好一樣軟</td></tr>
-    <tr><td><b>饅頭／包子：外酥內軟版</b><br><span class="muted">像烤饅頭、水煎包底</span></td><td><kbd class="knob">右3 熱風</kbd> <b>190°C</b> ＋ 蒸氣 <b>3</b> → 最後 3～4 分<b>關掉蒸氣</b></td><td><span class="acc a-glass">盤</span>直接放玻璃烤盤第 2 層，底部刷一點油；<b>不要用黑色蒸盤</b>（塑膠不耐熱風）</td><td>冷藏 <b>10～12 分</b>／冷凍 <b>18～22 分</b></td><td>前段蒸氣把裡面蒸透變軟，後段乾熱讓外皮金黃微酥</td></tr>
-    <tr><td><b>炸雞／鹽酥雞／雞塊</b></td><td><kbd class="knob">左4 熱風燒烤</kbd> <b>190°C</b> ＋ 微波 <b>180W</b></td><td><span class="acc a-rack">烤</span>炸雞放烤架第 2 層，玻璃烤盤第 1 層接油</td><td><b>5～8 分</b></td><td>微波熱透骨邊，熱風燒烤把麵衣逼出油、恢復酥脆</td></tr>
+  <table class="reheat">
+    <tr><th>食物</th><th>組合</th><th>配件擺法</th><th>設定步驟（照順序按）</th><th>重點</th></tr>
+    <tr><td><b>冷掉的薯條</b></td><td>熱風（不加微波、不加蒸氣）</td><td><span class="acc a-glass">盤</span> 薯條平鋪在玻璃烤盤，第 2 層</td><td><ol class="steps"><li>左旋鈕轉到 <kbd class="knob">右3 熱風</kbd></li><li><b>右旋鈕</b>轉到 <b>210°C</b></li><li>短按 <kbd>⇡</kbd> 開快速預熱 → 按 <kbd class="go">start</kbd></li><li>嗶一聲（預熱完成）→ 放入薯條</li><li>按 <kbd>⏱</kbd> <b>兩下</b> → <b>右旋鈕</b>設 <b>6～8 分</b>（幾秒後自動生效，開始倒數）</li><li>中途開門翻一次 → 關門按 start 繼續</li></ol></td><td>薯條要「乾」，微波和蒸氣都會讓它變軟。</td></tr>
+    <tr><td><b>速食漢堡<br><span class="muted">室溫／冷藏</span></b></td><td>熱風 ＋ 微波</td><td><span class="acc a-rack">烤</span> 漢堡放烤架第 2 層，玻璃烤盤第 1 層接油</td><td><ol class="steps"><li>左旋鈕轉到 <kbd class="knob">右3 熱風</kbd></li><li><b>右旋鈕</b>轉到 <b>180°C</b></li><li>按 <kbd>〰</kbd>，<b>一直按</b>到螢幕顯示 <b>180W</b>（螢幕會跳出建議時間）</li><li><b>右旋鈕</b>改時間：室溫 <b>4～5 分</b>／冷藏 <b>6～8 分</b></li><li>放入漢堡，關門 → 按 <kbd class="go">start</kbd></li></ol></td><td><b>包裝紙（含鋁箔）一定要拆</b>；生菜、番茄先拿出來，烤完再放回。</td></tr>
+    <tr><td><b>漢堡（講究版）</b></td><td>肉排：熱風＋微波<br>麵包：只用熱風</td><td><span class="acc a-rack">烤</span> 肉排先上烤架第 2 層；麵包剖半之後再放</td><td><ol class="steps"><li>左旋鈕 <kbd class="knob">右3 熱風</kbd> → <b>右旋鈕</b> <b>180°C</b></li><li>按 <kbd>〰</kbd> 到 <b>360W</b> → <b>右旋鈕</b>設 <b>4 分</b> → 放肉排 → <kbd class="go">start</kbd></li><li>剩 2 分鐘時開門（自動暫停），把剖半的麵包切面朝上放上烤架</li><li>關門 → 按 <kbd class="go">start</kbd> 繼續到時間結束</li></ol></td><td>肉排熱透、麵包剛好酥。</td></tr>
+    <tr><td><b>歐式麵包／法棍／餐包</b></td><td>熱風 ＋ 蒸氣，最後關蒸氣</td><td><span class="acc a-rack">烤</span> 麵包放烤架第 2 層，玻璃烤盤第 1 層</td><td><ol class="steps"><li>水箱加水到 MAX</li><li>左旋鈕 <kbd class="knob">右3 熱風</kbd> → <b>右旋鈕</b> <b>180°C</b></li><li>按 <kbd>♨</kbd> 選強度 <b>2</b>（每按一下 3 → 2 → 1 → 關）</li><li>按 <kbd>⏱</kbd> <b>兩下</b> → <b>右旋鈕</b>設 <b>8 分</b>（大顆 10 分）</li><li>放入麵包 → 按 <kbd class="go">start</kbd></li><li><b>剩 2 分鐘時</b>連按 <kbd>♨</kbd> 直到蒸氣關掉，機器繼續熱風烤脆外殼</li></ol></td><td>蒸氣讓內部回軟，最後乾烤讓外殼變脆。烤前噴一點水更好。</td></tr>
+    <tr><td><b>可頌／酥皮類</b></td><td>熱風（不加蒸氣）</td><td><span class="acc a-rack">烤</span> 可頌放烤架第 2 層，玻璃烤盤第 1 層接酥皮屑</td><td><ol class="steps"><li>左旋鈕 <kbd class="knob">右3 熱風</kbd> → <b>右旋鈕</b> <b>170°C</b></li><li>短按 <kbd>⇡</kbd> 快速預熱 → <kbd class="go">start</kbd> → 嗶聲後放入</li><li>按 <kbd>⏱</kbd> 兩下 → <b>右旋鈕</b>設 <b>3～5 分</b></li></ol></td><td>奶油多的酥皮靠乾熱就會酥，加蒸氣反而塌。</td></tr>
+    <tr><td><b>吐司／切片麵包</b></td><td>全面燒烤</td><td><span class="acc a-rack">烤高</span> 吐司直接放烤架第 3 層</td><td><ol class="steps"><li>左旋鈕轉到 <kbd class="knob">右4 全面燒烤</kbd></li><li><b>右旋鈕</b>選段數 <b>3</b></li><li>按 <kbd>⏱</kbd> 兩下 → <b>右旋鈕</b>設 <b>3～5 分</b></li><li>放入吐司 → <kbd class="go">start</kbd></li></ol></td><td>邊烤邊看，很快會焦。</td></tr>
+    <tr><td><b>饅頭／包子：軟 Q 版<br><span class="muted">冷藏</span></b></td><td>蒸氣 ＋ 微波</td><td><span class="acc a-steam">蒸</span> 放黑色蒸盤（留間距），蒸盤放進玻璃烤盤，第 3 層</td><td><ol class="steps"><li>水箱加水到 MAX</li><li>左旋鈕轉到 <kbd class="knob">右2 蒸氣</kbd>（預設強度 3）</li><li>按 <kbd>〰</kbd>，一直按到 <b>360W</b></li><li><b>右旋鈕</b>設時間：冷藏 <b>5～7 分</b>／冷凍 <b>10～12 分</b></li><li>放入 → <kbd class="go">start</kbd></li></ol></td><td>比純蒸快一半，跟剛蒸好一樣軟。</td></tr>
+    <tr><td><b>饅頭／包子：外酥內軟版<br><span class="muted">像烤饅頭、水煎包底</span></b></td><td>熱風 ＋ 蒸氣，最後關蒸氣</td><td><span class="acc a-glass">盤</span> 直接放玻璃烤盤第 2 層，底部刷一點油；<b>不要用黑色蒸盤</b></td><td><ol class="steps"><li>水箱加水到 MAX</li><li>左旋鈕 <kbd class="knob">右3 熱風</kbd> → <b>右旋鈕</b> <b>190°C</b></li><li>按 <kbd>♨</kbd> 選強度 <b>3</b></li><li>按 <kbd>⏱</kbd> 兩下 → <b>右旋鈕</b>設時間：冷藏 <b>12 分</b>／冷凍 <b>22 分</b></li><li>放入 → <kbd class="go">start</kbd></li><li><b>剩 3～4 分鐘時</b>連按 <kbd>♨</kbd> 直到蒸氣關掉</li></ol></td><td>前段蒸透變軟，後段乾熱讓外皮金黃微酥。</td></tr>
+    <tr><td><b>炸雞／鹽酥雞／雞塊</b></td><td>熱風燒烤 ＋ 微波</td><td><span class="acc a-rack">烤</span> 炸雞放烤架第 2 層，玻璃烤盤第 1 層接油</td><td><ol class="steps"><li>左旋鈕轉到 <kbd class="knob">左4 熱風燒烤</kbd></li><li><b>右旋鈕</b>轉到 <b>190°C</b></li><li>按 <kbd>〰</kbd>，一直按到 <b>180W</b></li><li><b>右旋鈕</b>設時間 <b>5～8 分</b></li><li>放入 → <kbd class="go">start</kbd></li></ol></td><td>微波熱透骨邊，熱風燒烤把麵衣逼出油、恢復酥脆。</td></tr>
   </table>
   </div>
 
-  <h3>組合模式怎麼按（以「熱風＋蒸氣，最後關蒸氣」為例）</h3>
-  <ol>
-    <li>水箱加水到 MAX。</li>
-    <li>左旋鈕轉到 <kbd class="knob">右3 熱風</kbd> → 右旋鈕調溫度（例如 180°C）。</li>
-    <li>按 <kbd>♨</kbd> 選蒸氣強度（每按一下由高往低：3 → 2 → 1 → 關）。</li>
-    <li>按 <kbd>⏱</kbd> 兩下 → 右旋鈕設時間 → <kbd class="go">start</kbd>。</li>
-    <li><b>最後 2～4 分鐘</b>：連按 <kbd>♨</kbd> 直到蒸氣關閉（過了強度 1 就會關掉），機器繼續用熱風烤乾外皮。</li>
-  </ol>
-  <p><b>熱風＋微波</b>：步驟 3 改按 <kbd>〰</kbd> 選瓦數（180 或 360W；組合模式不能用 1000W）。運轉中才加微波的話機器會先暫停，再按一次 start 即可。</p>
+  <h3>按鍵順序公式（所有組合都一樣）</h3>
+  <div class="box info"><strong>口訣：① 左旋鈕選主功能 → ② 右旋鈕調溫度 → ③ 按「加料鍵」加微波或蒸氣 → ④ 設時間 → ⑤ start</strong>
+    <div class="table-wrap">
+    <table>
+      <tr><th>組合</th><th>①左旋鈕</th><th>②右旋鈕</th><th>③加料鍵</th><th>④時間怎麼設</th><th>⑤</th></tr>
+      <tr><td><b>熱風＋微波</b></td><td><kbd class="knob">右3 熱風</kbd></td><td>溫度</td><td>按 <kbd>〰</kbd> 到要的瓦數</td><td>按完 〰 螢幕自動跳到時間 → <b>直接轉右旋鈕</b></td><td><kbd class="go">start</kbd></td></tr>
+      <tr><td><b>熱風燒烤＋微波</b></td><td><kbd class="knob">左4 熱風燒烤</kbd></td><td>溫度</td><td>按 <kbd>〰</kbd> 到要的瓦數</td><td>同上，直接轉右旋鈕</td><td><kbd class="go">start</kbd></td></tr>
+      <tr><td><b>熱風＋蒸氣</b></td><td><kbd class="knob">右3 熱風</kbd></td><td>溫度</td><td>按 <kbd>♨</kbd> 到要的強度</td><td>按 <kbd>⏱</kbd> <b>兩下</b> → 轉右旋鈕</td><td><kbd class="go">start</kbd></td></tr>
+      <tr><td><b>蒸氣＋微波</b></td><td><kbd class="knob">右2 蒸氣</kbd></td><td>（蒸氣不用調溫度；要改強度按 ♨）</td><td>按 <kbd>〰</kbd> 到要的瓦數</td><td>直接轉右旋鈕</td><td><kbd class="go">start</kbd></td></tr>
+      <tr><td><b>只用熱風</b></td><td><kbd class="knob">右3 熱風</kbd></td><td>溫度</td><td>（要預熱就短按 <kbd>⇡</kbd>）</td><td>按 <kbd>⏱</kbd> 兩下 → 轉右旋鈕</td><td><kbd class="go">start</kbd></td></tr>
+    </table>
+    </div>
+  </div>
+  <ul>
+    <li><b>怎麼知道現在右旋鈕在調哪個？</b>螢幕上正在調整的數值下方會有<b>紅色底線</b>。想回頭改溫度就按 <kbd>🌡/kg</kbd>，想改時間就按 <kbd>⏱</kbd>。</li>
+    <li><b>瓦數一直按會循環</b>：由高往低切換（組合模式最高只到 600W，不能用 1000W）。</li>
+    <li><b>蒸氣一直按會關掉</b>：3 → 2 → 1 → 關 → 再按又從 3 開始。</li>
+    <li><b>運轉中才加微波</b>：機器會自動暫停，再按一次 start 就好（適合「先預熱、放食物後再加微波」）。</li>
+    <li><b>不要空爐開微波</b>：要預熱就先用「只用熱風」預熱，放進食物後才按 〰 加微波。</li>
+    <li>運轉中轉右旋鈕可以隨時改溫度或時間。</li>
+  </ul>
 
   <div class="box tip"><strong>💡 讓效果更好的小技巧（一般經驗）</strong>
     <ul>
